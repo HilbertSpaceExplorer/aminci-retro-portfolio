@@ -35,7 +35,7 @@ export default function Bash(print: (s: string, md?: boolean) => void) {
   }
 
   function cmdNotFound(cmdName: string) {
-    print(`\n${cmdName}:command not found`);
+    print(`\n${cmdName}: command not found`);
   }
 
   function prompt() {
@@ -46,7 +46,7 @@ export default function Bash(print: (s: string, md?: boolean) => void) {
     }
     out = out.replace(/^\/home\/user/, "~");
     if (out !== "~") out += " ";
-    print(`\nuser:${out}$`);
+    print(`\naminci:${out}$`);
   }
 
   function input(cmd: string) {

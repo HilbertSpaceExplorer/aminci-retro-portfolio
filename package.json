@@ -1,15 +1,12 @@
 {
+  "name": "aminci-retro-portfolio",
+  "version": "1.0.0",
+  "description": "Aminci Gana's retro-computer engineering portfolio.",
   "author": {
-    "name": "Ed Hinrichsen",
-    "url": "https://www.edwardh.io"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edhinrichsen/retro-computer-website.git"
+    "name": "Aminci Gana"
   },
   "license": "MIT",
-  "name": "retro-computer-website",
-  "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",

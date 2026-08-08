@@ -17,7 +17,7 @@ export default function hello(
       return;
     }
 
-    print("\nHello, world!");
+    print("\nAminci OS online. Welcome to the project archive.");
   };
   return { docs, app };
 }

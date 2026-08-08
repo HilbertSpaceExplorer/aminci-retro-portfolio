@@ -26,7 +26,7 @@ export default function cd(print: (s: string, md?: boolean) => void, path: FileS
         return;
       }
       if (!("children" in (operation.at(-1) as any))) {
-        print(`\n${operation.at(-1)?.name}:not a directory`);
+        print(`\n${operation.at(-1)?.name}: not a directory`);
         return;
       }
 

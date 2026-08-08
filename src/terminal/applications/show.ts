@@ -62,7 +62,7 @@ export default function show(
     }
 
     if (!("data" in file)) {
-      print(`\n${file.name}:not a file`);
+      print(`\n${file.name}: not a file`);
       return;
     }
 

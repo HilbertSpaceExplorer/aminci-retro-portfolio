@@ -1,8 +1,7 @@
-
-
-
-
 # Contact
-## Reach out on*LinkedIn*
 
-https://www.linkedin.com/in/edwardhinrichsen/
+For engineering, robotics, and research conversations, email me directly.
+
+## *Email*
+
+amincigana@gmail.com

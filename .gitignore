@@ -25,4 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 
-readme.md
+# local design rollback snapshots
+/.codex-preview-backup

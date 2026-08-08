@@ -43,7 +43,9 @@ const h3Font: FontInfo = (function () {
   return { font: undefined, size, height, width, leading, tracking };
 })();
 
-declare const screenWidth: number;
+// The original site relied on an external helper script to create this global.
+// Keep the terminal self-contained so it cannot fail when that CDN is absent.
+const screenWidth = 1.4;
 
 const paragraphFont: FontInfo = (function () {
   const size = 0.0275;

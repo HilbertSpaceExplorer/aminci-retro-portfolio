@@ -28,7 +28,7 @@ export default function Terminal(screenTextEngine: {
   textarea.readOnly = true;
   textarea.blur();
   screenTextEngine.placeMarkdown(titleText);
-  screenTextEngine.placeText("user:~$");
+  screenTextEngine.placeText("aminci:~$");
 
   const bash = Bash((s, md = false) => {
     if (md) {
@@ -67,6 +67,16 @@ export default function Terminal(screenTextEngine: {
     }
   });
   window.addEventListener("keypress", (e) => {
+    const activeElement = document.activeElement;
+    if (
+      activeElement instanceof HTMLElement &&
+      activeElement.closest(
+        "dialog, a, button, input:not(#textarea), textarea:not(#textarea), select"
+      )
+    ) {
+      return;
+    }
+
     if (
       textarea.readOnly === true ||
       document.activeElement?.id !== "textarea"

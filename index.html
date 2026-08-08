@@ -1,662 +1,741 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Ed Hinrichsen – Personal Website</title>
-    <meta
-      name="description"
-      content="My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics."
-    />
-
-    <link rel="icon" type="image/png" href="/icon/32x32.png" />
-
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icon/180x180.png" />
-    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>Aminci OS — Robotics &amp; Engineering Portfolio</title>
     <meta
-      name="apple-mobile-web-app-title"
-      content="Ed Hinrichsen – Personal Website"
+      name="description"
+      content="Aminci Gana is a mechanical engineering student building robotics, computer vision, machine learning, sensing, and control systems."
     />
+    <meta name="author" content="Aminci Gana" />
+    <meta name="theme-color" content="#d4ebe5" />
+
+    <meta
+      property="og:title"
+      content="Aminci OS — Robotics &amp; Engineering Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Robotics, computer vision, machine learning, sensing, and control projects by Aminci Gana."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon/og-img1.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aminci OS retro computer portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Aminci OS — Robotics &amp; Engineering Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Robotics, computer vision, machine learning, sensing, and control projects by Aminci Gana."
+    />
+    <meta name="twitter:image" content="/icon/og-img1.png" />
+
+    <link rel="icon" type="image/png" href="/icon/32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/180x180.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Aminci OS" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="theme-color" content="#f6d4b1" />
 
-    <meta property="og:title" content="Ed Hinrichsen – Personal Website" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://edh.dev/" />
-    <meta property="og:image" content="https://edh.dev/icon/og-img1.png" />
-    <meta
-      name="og:description"
-      content="My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics."
-    />
-    <link rel="manifest" href="/manifest.json" />
     <script type="module" src="/src/main.ts"></script>
   </head>
 
   <body>
     <div id="home"></div>
-
-    <canvas class="webgl"></canvas>
+    <canvas class="webgl" aria-label="Interactive Aminci OS retro computer"></canvas>
 
     <div id="hero-backup">
-      <h3>Hi there, I’m</h3>
-      <h1>Ed</h1>
+      <p class="eyebrow">AMINCI OS / ENGINEERING ARCHIVE</p>
+      <h1>Aminci Gana</h1>
       <ul>
-        <li>Software Engineer</li>
-        <li>Digital Designer</li>
+        <li>Mechanical Engineering Student</li>
+        <li>Robotics · Computer Vision · ML</li>
+        <li>Sensing · Control</li>
       </ul>
     </div>
 
-    <nav>
+    <nav aria-label="Primary navigation">
       <div class="menu-btn">
-        <button class="btn" onclick="toggleMenu()">
-          <svg width="16" height="16">
-            <rect class="st0" width="16" height="3.2" />
-            <rect y="6.4" class="st0" width="16" height="3.2" />
-            <rect y="12.8" class="st0" width="16" height="3.2" />
+        <button
+          class="btn"
+          type="button"
+          aria-label="Toggle navigation"
+          onclick="toggleMenu()"
+        >
+          <svg width="16" height="16" aria-hidden="true">
+            <rect width="16" height="3.2" />
+            <rect y="6.4" width="16" height="3.2" />
+            <rect y="12.8" width="16" height="3.2" />
           </svg>
         </button>
-        <div style="display: flex">
+        <div class="social-links" aria-label="Social links">
           <a
-            class="btn"
-            href="https://www.linkedin.com/in/edwardhinrichsen/"
+            class="btn social-link"
+            href="https://www.linkedin.com/in/aminci-jonathan-gana-257903389/"
             target="_blank"
+            rel="noreferrer"
+            aria-label="Aminci Gana on LinkedIn"
+            title="LinkedIn"
           >
-            <svg width="16" height="16">
-              <path
-                d="M0.1,2c0-1,0.8-1.8,1.9-1.8c1,0,1.8,0.9,1.8,1.8c0,1-0.8,1.9-1.8,1.9C0.9,3.9,0.1,3.1,0.1,2z M0.1,5h3.7v9.8
-                H0.1V5z"
-              />
-              <path
-                d="M15.9,8.5v6.2h-3.5V9.4c0-0.9-0.6-1.6-1.5-1.6c-0.8,0-1.4,0.6-1.4,1.5v5.5H5.8V5h3.7v1
-                c0.6-0.7,1.6-1.2,2.8-1.2C14.4,4.7,15.9,6.3,15.9,8.5z"
-              />
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.1 20.45H3.54V9H7.1v11.45Z" />
             </svg>
           </a>
           <a
-            class="btn"
-            href="https://bsky.app/profile/edh.dev/"
+            class="btn social-link"
+            href="https://github.com/HilbertSpaceExplorer"
             target="_blank"
+            rel="noreferrer"
+            aria-label="Aminci Gana on GitHub"
+            title="GitHub"
           >
-            <svg viewBox="0 0 64 57" width="16" height="14.25">
-              <path
-                d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            class="btn"
-            href="https://github.com/edhinrichsen/retro-computer-website"
-            target="_blank"
-          >
-            <svg width="16" height="16">
-              <path
-                d="M10.6,12.9c0-1-0.3-1.6-0.7-2c2.4-0.3,4.9-1.1,4.9-5.2c0-1.1-0.4-2.1-1.1-2.9c0.1-0.3,0.5-1.3-0.1-2.8
-                c0,0-0.9-0.3-3,1.1c-1.7-0.5-3.6-0.5-5.4,0c-2-1.4-3-1.1-3-1.1C1.6,1.4,2,2.5,2.1,2.8C1.4,3.5,1,4.6,1,5.6c0,4.1,2.5,5,4.9,5.3
-                c-0.4,0.4-0.6,0.9-0.7,1.4c-0.6,0.3-2.2,0.7-3.1-0.9c0,0-0.6-1-1.6-1.1c0,0-1.1,0-0.1,0.7c0,0,0.7,0.3,1.1,1.6c0,0,0.6,2.1,3.6,1.5
-                c0,0.9,0,1.8,0,1.8h5.3C10.6,15.9,10.6,14.4,10.6,12.9z"
-              />
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.24c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.28 5.68.42.36.79 1.07.79 2.16v3.25c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
             </svg>
           </a>
         </div>
       </div>
 
       <div class="menu-body" onclick="closeMenu()">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#aboutMe" onclick="closeMenu()">About</a>
-        <a href="#projects" onclick="closeMenu()">Projects</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
 
-      <div id="tip-scroll">Scroll &#8595;</div>
+      <div id="tip-scroll">Scroll ↓</div>
     </nav>
 
     <main>
-      <section>
-        <h1 id="aboutMe">Hi there</h1>
+      <section id="about">
+        <p class="section-kicker">SYSTEM PROFILE</p>
+        <h1>Hardware meets data</h1>
         <p>
-          My name is Ed Hinrichsen, I’m an award-winning web dev / digital
-          designer and full stack software engineer. I have a passion for all
-          things technology and design, from software engineering & machine
-          learning to UI/UX & 3D graphics.
+          I’m Aminci Gana, a mechanical engineering student working across
+          robotics, computer vision, machine learning, sensing, and control.
         </p>
         <p>
-          In addition to my love of technology and design, I am also interested
-          in education, history, economics and politics.
+          I build experimental systems that measure physical behaviour, turn
+          measurements into models, and validate the results against real
+          hardware.
         </p>
-
-        <p>
-          Below are details of some of the projects I have developed over my
-          fifteen plus years of coding experience.
-        </p>
+        <div class="mission">
+          <span>Current mission</span>
+          <strong>Predicting continuum robot shape under external forces.</strong>
+        </div>
       </section>
 
-      <section>
-        <h1 id="projects">Projects</h1>
-        <hr />
-        <h2>Page Buddy</h2>
-        <h3>2023-24</h3>
-        <ul class="skills">
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>Gleam (Erlang)</li>
-          <li>Sql</li>
-          <li>AI</li>
-          <li>Web Dev</li>
-        </ul>
-        <p>
-          Page Buddy is a word processor, with everything you would expect from
-          WYSIWYG editor along with a novel drag and drop user interface and a
-          powerful style/theme engine. Additionally it provides: rich
-          accessibility tools, including, an embedded neural network (Wasm /
-          WebGPU) for auto complete, developed to help people with dyslexia
-          (like me) with their writing; and the ability for users to publish
-          their documents to the web.
-        </p>
-        <p>
-          Page Buddy is about 35K lines of code, it even has some users (~100
-          WAUs)!
-        </p>
-        <p><a href="https://pagebuddy.app">pagebuddy.app</a></p>
-        <br />
-        <div class="image">
-          <img
-            src="/src/img/pagebuddy1.webp"
-            width="100%"
-            alt="Page Buddy screenshot"
-            loading="lazy"
-            style="aspect-ratio: 2443 / 1576"
-          />
-        </div>
-        <hr />
-        <h2>Folio (This Website)</h2>
-        <h3>2022</h3>
-        <ul class="skills">
-          <li>TypeScript</li>
-          <li>WebGL</li>
-          <li>Shader Language</li>
-          <li>Web Dev</li>
-        </ul>
-        <p>
-          This was a project I built for fun over one of my uni breaks, built in
-          TypeScript and THREE.js, it contains a number of nifty features such
-          as: a 3D retro computer that you can interact with, a very simple UNIX
-          shell implementation, a files system implementation, markdown
-          interpreter and renderer, and a text layout engine.
-        </p>
-        <hr />
-        <h2>Writing Buddy</h2>
-        <h3>2021</h3>
-        <ul class="skills">
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>UI/UX</li>
-          <li>Branding</li>
-          <li>AI</li>
-          <li>Deep Learning</li>
-          <li>Web Dev</li>
-        </ul>
-        <p>An early version of Page Buddy.</p>
-        <p>
-          I have dyslexia and as such, have always found writing and
-          particularly spelling difficult and tedious. While there are a number
-          of tools on the market designed to aid people with learning
-          difficulties, based on my experience, all fall short in one way or
-          another. To fix this I developed Writing Buddy, a “what you see is
-          what you get” text editor designed to help people write better, faster
-          and with more confidence.
-        </p>
-        <button
-          class="collapse-btn btn"
-          collapsed="true"
-          onclick="this.setAttribute('collapsed', this.getAttribute('collapsed') === 'true'? 'false' : 'true')"
-        >
-          more...
-        </button>
+      <section id="projects">
+        <p class="section-kicker">PROJECT ARCHIVE / 2025–2026</p>
+        <h1>Selected engineering work</h1>
 
-        <div class="collapse-body">
-          <p>
-            Writing Buddy is built on the principle that the best way to help
-            people who struggle with writing and spelling is to reduce the
-            amount of writing and spelling they actually have to do. I achieved
-            this by developing a state of the art custom prediction engine that
-            predicts the next word, dramatically decreasing the amount of words
-            that need to be typed. This has the additional benefit of appealing
-            to students and professionals who just want to express themselves
-            faster than otherwise possible.
-          </p>
-          <p>
-            Nearly every part and component of Writing Buddy is bespoke, with
-            everything from the UI/UX and branding to the prediction engine
-            designed and built by myself. The Writing Buddy editor is built in
-            TypeScript and React and the prediction engine is built with a
-            combination of deep learning and traditional computer science
-            techniques.
-          </p>
-        </div>
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 01</span>
+            <span>IN PROGRESS · PUBLIC SUMMARY</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media project-media--contain">
+              <img
+                src="/images/projects/continuum-robot/cover.png"
+                alt="Representative continuum robot illustration"
+                loading="lazy"
+              />
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>Continuum Robot Shape Prediction</h2>
+                <h3>ROBOTICS / SENSING / MODEL VALIDATION</h3>
+              </div>
+              <p>
+                An experimental pipeline combining force sensing, stereo
+                vision, marker tracking, and model-based validation to compare
+                predicted robot shapes with measured 3D backbone data.
+              </p>
+              <ul class="skills">
+                <li>Robotics</li>
+                <li>Stereo Vision</li>
+                <li>Force Sensing</li>
+                <li>MATLAB / Simulink</li>
+                <li>Python</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>→</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="project-card-trigger"
+            type="button"
+            data-project-dialog="project-continuum-robot"
+            aria-haspopup="dialog"
+            aria-controls="project-continuum-robot"
+            aria-label="Open details for Continuum Robot Shape Prediction"
+          ></button>
+        </article>
 
-        <br />
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 02</span>
+            <span>VISION SYSTEM · 2025</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media">
+              <img
+                src="/images/projects/laptime-stopwatch/cover.jpg"
+                alt="Representative image of a mobile robot test platform"
+                loading="lazy"
+              />
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>Vision-Based Robot Laptimer</h2>
+                <h3>COMPUTER VISION / MOBILE ROBOTICS</h3>
+              </div>
+              <p>
+                A camera-based timing system that detects robot markers, tracks
+                lap events, filters noisy measurements, and produces
+                performance data for small autonomous robots.
+              </p>
+              <ul class="skills">
+                <li>Computer Vision</li>
+                <li>ArUco Tracking</li>
+                <li>Python</li>
+                <li>OpenCV</li>
+                <li>Mobile Robotics</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>→</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="project-card-trigger"
+            type="button"
+            data-project-dialog="project-laptime-stopwatch"
+            aria-haspopup="dialog"
+            aria-controls="project-laptime-stopwatch"
+            aria-label="Open details for Vision-Based Robot Laptimer"
+          ></button>
+        </article>
 
-        <div class="image">
-          <img
-            src="/src/img/glyph9.png"
-            width="100%"
-            alt="Writing Buddy screenshot"
-            style="aspect-ratio: 1330 / 924"
-          />
-          <img
-            src="/src/img/glyph8.png"
-            width="100%"
-            alt="Writing Buddy screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1330 / 623"
-          />
-        </div>
-        <hr />
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 03</span>
+            <span>CONTROL TEST · 2025</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media">
+              <img
+                src="/images/projects/pid-evaluation/cover.jpg"
+                alt="Representative distance-control illustration"
+                loading="lazy"
+              />
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>PID Robustness Evaluation</h2>
+                <h3>CONTROL ENGINEERING / EXPERIMENTAL VALIDATION</h3>
+              </div>
+              <p>
+                Vision-based measurement and repeatable experiments used to
+                assess stability, overshoot, settling behaviour, and robustness
+                in a mobile robot distance controller.
+              </p>
+              <ul class="skills">
+                <li>Control Engineering</li>
+                <li>Computer Vision</li>
+                <li>Python</li>
+                <li>OpenCV</li>
+                <li>Data Analysis</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>→</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="project-card-trigger"
+            type="button"
+            data-project-dialog="project-pid-evaluation"
+            aria-haspopup="dialog"
+            aria-controls="project-pid-evaluation"
+            aria-label="Open details for PID Robustness Evaluation"
+          ></button>
+        </article>
 
-        <h2>My Own Programming Language</h2>
-        <h3>2021</h3>
-        <ul class="skills">
-          <li>Lexing & Tokenization</li>
-          <li>Syntactic Analysis</li>
-          <li>Parsing</li>
-          <li>Compiler & Interpreter Design</li>
-        </ul>
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 04</span>
+            <span>ML ANALYSIS · 2025</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media">
+              <img
+                src="/images/projects/compressed-air-ml/cover.jpg"
+                alt="Representative image of a compressed-air system"
+                loading="lazy"
+              />
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>Compressed-Air System ML</h2>
+                <h3>MACHINE LEARNING / SENSOR DATA</h3>
+              </div>
+              <p>
+                Data-driven classification and regression models for
+                understanding compressed-air system behaviour from pressure,
+                volume-flow, and power measurements.
+              </p>
+              <ul class="skills">
+                <li>Machine Learning</li>
+                <li>Sensor Data</li>
+                <li>Classification</li>
+                <li>Regression</li>
+                <li>Python</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>→</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="project-card-trigger"
+            type="button"
+            data-project-dialog="project-compressed-air-ml"
+            aria-haspopup="dialog"
+            aria-controls="project-compressed-air-ml"
+            aria-label="Open details for Compressed-Air System ML"
+          ></button>
+        </article>
+      </section>
+
+      <section id="contact">
+        <p class="section-kicker">CONTACT</p>
+        <h1>Let’s build something that moves</h1>
         <p>
-          For a while now I have been fascinated by computer languages and when
-          over the semester break, I had a bit of time on my hands, I decided
-          to—as an academic exercise—design my own language. My language
-          consists of two components; the recursive descent parser which first
-          lexers and tokenizes the input before generating an abstract syntax
-          tree (AST); and the interpreter which traverses the AST and produces
-          the appropriate output.
+          For engineering, robotics, and research conversations, email me
+          directly.
         </p>
-        <p>
-          My language currently includes features such as closures, lambda
-          expressions, first class and pure functions, making it well-suited to
-          functional programming. In addition to this I plan to add support for
-          multithreading and a stronger type system plus optimizations for
-          tail-call recursion. I am also experimenting with implementing a stack
-          based virtual machine—bytecode interpreter—to run my language.
-        </p>
-        <hr />
-
-        <h2>Glowbal</h2>
-        <h3>2020</h3>
-        <ul class="skills">
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>Design</li>
-          <li>Accessibility</li>
-          <li>UI/UX</li>
-          <li>Web Dev</li>
-        </ul>
-        <p>
-          As part of the university subject IT Project, I was required to
-          produce an ePortfolio web app as part of a small group. We called our
-          app Glowbal and built it with TypeScript, React, Express and employed
-          an agile development process. I was a front end lead and wrote most of
-          the UI components. I was also responsible for accessibility testing
-          and ensuring users of all abilities could access our app.
-        </p>
-        <div class="image">
-          <video width="100%" controls loop autoplay muted playsinline disablepictureinpicture>
-            <source src="/src/img/Glowbal.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <hr />
-
-        <h2>Cyber Heist</h2>
-        <h3>2020</h3>
-        <ul class="skills">
-          <li>Shader Dev</li>
-          <li>Design</li>
-          <li>User Testing</li>
-          <li>Game Dev</li>
-        </ul>
-        <p>
-          For the subject Graphics and Interaction, I worked in a team to
-          produce a time based endless runner game called CyberHeist. The game
-          was built in Unity/C# and made use of a number of Azure APIs to add
-          online play functionality. I was responsible for most of the online
-          investigation and a large amount of the game logic, shader programming
-          and user testing. CyberHeist received a final mark of over 95% and the
-          trailer can be found below.
-        </p>
-        <div class="image">
-          <iframe
-            style="aspect-ratio: 16 / 9"
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/LvVK7j2WmfU?controls=0"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <hr />
-
-        <h2>Pavilion</h2>
-        <h3>2019</h3>
-        <ul class="skills">
-          <li>VR</li>
-          <li>3D Rendering</li>
-          <li>3D Printing</li>
-          <li>Parametric Design</li>
-          <li>Architecture</li>
-        </ul>
-        <p>
-          At university, in addition to my computer science subjects, I
-          completed a number of architecture and design electives. In one of my
-          favourite architecture subjects we had to design and 3D print a
-          pavilion using parametric tools and present it in VR with Unreal
-          Engine. I programmatically modeled a magnetic field and extracted the
-          field lines to inform the structure of my pavilion. I enjoyed this
-          assignment so much I decided to extend myself and produce a number of
-          3D ray traced renders some of which are below. My design received
-          first class honors and was chosen to be exhibited in the prestigious
-          Melbourne School of Design annual exhibition (MSDx).
-        </p>
-        <div class="image">
-          <img
-            src="/src/img/pavilion1.png"
-            width="100%"
-            alt="Pavilion image"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1080"
-          />
-          <img
-            src="/src/img/pavilion2.png"
-            width="100%"
-            alt="Pavilion image"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1080"
-          />
-        </div>
-        <hr />
-
-        <h2>Brick Breaker</h2>
-        <h3>2019</h3>
-        <ul class="skills">
-          <li>Software Engineering</li>
-          <li>Object Oriented Design</li>
-          <li>GRASP & GoF Patterns</li>
-          <li>Light Simulation</li>
-        </ul>
-        <p>
-          The below screenshot is of a university assignment, where we had to
-          follow a spec and use object oriented design principles and patterns
-          to produce a brick-breaker type game in Java. I finished with time to
-          spare so decided to implement a real time lighting and particle engine
-          from scratch. The engine was capable of handling different lights at
-          different intensities, intersecting shadows and a large number of
-          shadow casting game objects.
-        </p>
-        <div class="image" style="width: clamp(0px, 95vw, 680px)">
-          <img
-            src="/src/img/oosd-crop.png"
-            width="50%"
-            alt="Brick Breaker screenshot"
-            loading="lazy"
-            style="aspect-ratio: 532 / 385"
-          />
-        </div>
-        <hr />
-
-        <h2>Jackalope</h2>
-        <h3>2017</h3>
-        <ul class="skills">
-          <li>3D Printing</li>
-          <li>Industrial Design</li>
-          <li>Visual Communication</li>
-          <li>Branding</li>
-        </ul>
-        <p>
-          In my final year of high school I took a subject called Visual
-          Communication Design (VCD). As part of VCD we were given the
-          assignment to develop and fulfill a brief for a fictional client. I
-          gave myself the brief to design a series of smart home appliances for
-          the made up company Jackalope and produce accompanying visual identity
-          and advertising material. Below is a poster of a smart speakers I
-          designed with the Jackalope logo in the corner. See more of this
-          project on
+        <div class="contact-action">
           <a
-            target="_blank"
-            href="https://www.behance.net/gallery/57165159/HomeHub-by-Jackalope"
-            ><u>Behance.</u></a
+            class="btn"
+            href="mailto:amincigana@gmail.com?subject=Portfolio%20Contact"
           >
-        </p>
-        <div class="image">
-          <img
-            src="/src/img/jackalope.png"
-            width="100%"
-            alt="Jackalope poster"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1075"
-          />
+            amincigana@gmail.com ↗
+          </a>
         </div>
-        <hr />
-
-        <h2>Project L</h2>
-        <h3>2015</h3>
-        <ul class="skills">
-          <li>VR</li>
-          <li>Game Dev</li>
-          <li>Design</li>
-          <li>3D</li>
-        </ul>
-        <p>
-          Over the years I have made many games, with the screenshot below
-          representing one of them from around 2015. Probably one of the more
-          technically challenging games I have created, it was an open world VR
-          sandbox written in Unity, where you could interact, move, rotate and
-          scale the objects in the world to build anything you wanted.
-        </p>
-        <div class="image">
-          <img
-            src="/src/img/sc3.png"
-            width="100%"
-            alt="Project L screenshot"
-            style="aspect-ratio: 1439 / 896"
-          />
-          <img
-            src="/src/img/sc1.png"
-            width="100%"
-            alt="Project L screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1439 / 896"
-          />
-          <img
-            src="/src/img/sc2.png"
-            width="100%"
-            alt="Project L screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1439 / 896"
-          />
-        </div>
-        <hr />
-
-        <h2>Great Balls of Fire</h2>
-        <h3>2013-14</h3>
-        <ul class="skills">
-          <li>Mobile Dev</li>
-          <li>Design</li>
-          <li>Illustration</li>
-          <li>Branding</li>
-        </ul>
-        <p>
-          Great Balls of Fire was a game I made when I was 13 years old and is
-          one of the creations I am most proud of. It was an endless scroller
-          where you played as the titular Ball of Fire, attempting to stay in
-          the sky by jumping on air ships. It was published on the App Store and
-          Play Store and remained there for a number of years (before I got
-          tired of paying Apple's developer fee) and even netted a few thousand
-          downloads.
-        </p>
-        <div class="image">
-          <img
-            src="/src/img/gbof3.png"
-            width="100%"
-            alt="Great Balls of Fire screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1080"
-          />
-          <img
-            src="/src/img/gbof4.png"
-            width="100%"
-            alt="Great Balls of Fire screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1080"
-          />
-          <img
-            src="/src/img/gbof5.png"
-            width="100%"
-            alt="Great Balls of Fire screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1920 / 1080"
-          />
-          <iframe
-            style="aspect-ratio: 16 / 9"
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/N6mbNr0w39Y?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <hr />
-
-        <h2>The Golden Pack</h2>
-        <h3>2012-13</h3>
-        <ul class="skills">
-          <li>Design</li>
-          <li>Illustration</li>
-        </ul>
-        <p>
-          When I was 12 years old, I played a lot of Minecraft however, I was
-          never very happy with the low resolution look of the game. I decided
-          to remedy this by creating a texture pack, which is a file containing
-          alternative looks or textures for the objects in the game. When I put
-          my work online, after some refinement I received my first 1000
-          downloads. Spotting a business opportunity, I added ads to the
-          download link. My texture pack was downloaded over 50,000 times,
-          earning me a few hundred dollars.
-        </p>
-
-        <div class="image">
-          <img
-            src="/src/img/tgp.png"
-            width="100%"
-            alt="The Golden Pack image"
-            loading="lazy"
-            style="aspect-ratio: 800 / 600"
-          />
-        </div>
-        <hr />
-
-        <h2>EdSites</h2>
-        <h3>2010</h3>
-        <ul class="skills">
-          <li>Design</li>
-          <li>Web Dev</li>
-        </ul>
-        <p>
-          Below is one of my earliest creations dating back to 2010. As a
-          budding 10 year old web designer I needed a website to showcase my
-          work and attract “clients”, so I made one! I called it EdSites and
-          registered the domain name edsites.biz with my father’s credit card
-          and got to work. All the HTML, CSS and even the JavaScript was written
-          completely by hand by me. The website was such a success that it
-          resulted in some clients albeit they were all my family members.
-        </p>
-        <div class="image">
-          <img
-            src="/src/img/edsites.png"
-            width="100%"
-            alt="EdSites screenshot"
-            loading="lazy"
-            style="aspect-ratio: 1769 / 1229"
-          />
-        </div>
-        <hr />
-        <p>
-          This represents just a small selection of the projects I have worked
-          on over the years. I have many more pieces of personal, university and
-          design work.
-        </p>
-      </section>
-
-      <section>
-        <h1 id="contact">Contact</h1>
-        <p style="text-align: center">
-          Reach out on
-          <a href="https://www.linkedin.com/in/edwardhinrichsen/"
-            ><u><b>LinkedIn</b></u></a
-          >
-        </p>
       </section>
     </main>
 
-    <input type="text" id="textarea" readonly />
-    <div id="loading">
-      <h2>Booting...</h2>
+    <dialog
+      class="project-dialog"
+      id="project-continuum-robot"
+      aria-labelledby="project-continuum-robot-title"
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 01</span>
+            <span>PUBLIC SUMMARY</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE ×
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media project-dialog-media--contain">
+              <img
+                src="/images/projects/continuum-robot/cover.png"
+                alt="Representative continuum robot illustration"
+              />
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">ROBOTICS / SENSING / MODEL VALIDATION</p>
+              <h2 id="project-continuum-robot-title">
+                Continuum Robot Shape Prediction
+              </h2>
+              <p>
+                A public overview of an experimental workflow for predicting
+                continuum robot shape under external forces using physical
+                sensing, stereo vision, and model-based validation.
+              </p>
+              <ul class="skills">
+                <li>MATLAB / Simulink</li>
+                <li>Python</li>
+                <li>Stereo Vision</li>
+                <li>Force Sensing</li>
+              </ul>
+              <p class="project-confidentiality">
+                CONFIDENTIALITY NOTE — Specific geometry, datasets, institute
+                equipment, and results are intentionally omitted.
+              </p>
+            </div>
+          </div>
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Problem</h3>
+              <p>
+                External contact forces deform continuum robots, making shape
+                prediction from actuation information alone difficult.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / My contribution</h3>
+              <p>
+                I developed an experimental workflow connecting force
+                measurements, vision-based shape observations, and model
+                validation.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Technical approach</h3>
+              <p>
+                Synchronized sensing and stereo observations are transformed
+                into comparable measurements for evaluating predicted and
+                observed robot shapes.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / Current outcome</h3>
+              <p>
+                The work establishes a repeatable validation pipeline while
+                keeping confidential experimental details outside the public
+                portfolio.
+              </p>
+            </article>
+          </div>
+          <div class="project-demonstrates">
+            <h3>What this demonstrates</h3>
+            <ul>
+              <li>Experimental design</li>
+              <li>Sensor integration</li>
+              <li>3D computer vision</li>
+              <li>Physical-system validation</li>
+              <li>Scientific computing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="project-dialog"
+      id="project-laptime-stopwatch"
+      aria-labelledby="project-laptime-stopwatch-title"
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 02</span>
+            <span>VISION SYSTEM · 2025</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE ×
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media">
+              <img
+                src="/images/projects/laptime-stopwatch/cover.jpg"
+                alt="Representative image of a mobile robot test platform"
+              />
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">ROBOTICS / COMPUTER VISION</p>
+              <h2 id="project-laptime-stopwatch-title">
+                Vision-Based Robot Laptimer
+              </h2>
+              <p>
+                A camera-based stopwatch that detects robot crossing events and
+                records lap times for more repeatable performance testing.
+              </p>
+              <ul class="skills">
+                <li>Python</li>
+                <li>OpenCV</li>
+                <li>ArUco Tracking</li>
+                <li>Video Processing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Problem</h3>
+              <p>
+                Manual stopwatch measurements introduce reaction-time errors
+                and make robot configurations harder to compare objectively.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / My contribution</h3>
+              <p>
+                I built a vision-based timing workflow that detects a robot at
+                a defined start and finish region and records crossing events.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Technical approach</h3>
+              <p>
+                OpenCV processes the video stream, tracks the relevant marker,
+                filters repeated detections, and converts valid events into lap
+                measurements.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / Result</h3>
+              <p>
+                The system provides a more consistent timing method for
+                comparing control settings, robot configurations, and test
+                runs.
+              </p>
+            </article>
+          </div>
+          <div class="project-demonstrates">
+            <h3>What this demonstrates</h3>
+            <ul>
+              <li>Practical computer vision</li>
+              <li>Automated measurement</li>
+              <li>Robotics testing</li>
+              <li>Noise filtering</li>
+              <li>Performance evaluation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="project-dialog"
+      id="project-pid-evaluation"
+      aria-labelledby="project-pid-evaluation-title"
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 03</span>
+            <span>CONTROL TEST · 2025</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE ×
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media">
+              <img
+                src="/images/projects/pid-evaluation/cover.jpg"
+                alt="Representative distance-control illustration"
+              />
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">CONTROL / VISION / DATA ANALYSIS</p>
+              <h2 id="project-pid-evaluation-title">
+                PID Robustness Evaluation
+              </h2>
+              <p>
+                A quantitative workflow for evaluating distance-control
+                behaviour using computer-vision measurements from repeatable
+                robot experiments.
+              </p>
+              <ul class="skills">
+                <li>PID Control</li>
+                <li>Python</li>
+                <li>OpenCV</li>
+                <li>Data Analysis</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Problem</h3>
+              <p>
+                A controller that performs well under ideal conditions can
+                still become inaccurate or unstable when disturbances and
+                initial conditions change.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / My contribution</h3>
+              <p>
+                I developed a vision-based evaluation workflow for measuring
+                how robustly a mobile robot maintains a target distance.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Technical approach</h3>
+              <p>
+                Video-derived measurements support analysis of distance error,
+                overshoot, oscillation, settling behaviour, and sensitivity to
+                disturbances.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / Result</h3>
+              <p>
+                The workflow creates a more objective basis for comparing PID
+                behaviour across controlled test conditions.
+              </p>
+            </article>
+          </div>
+          <div class="project-demonstrates">
+            <h3>What this demonstrates</h3>
+            <ul>
+              <li>Control engineering</li>
+              <li>Vision-based measurement</li>
+              <li>Quantitative evaluation</li>
+              <li>Robustness analysis</li>
+              <li>Experimental validation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="project-dialog"
+      id="project-compressed-air-ml"
+      aria-labelledby="project-compressed-air-ml-title"
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 04</span>
+            <span>ML ANALYSIS · 2025</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE ×
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media">
+              <img
+                src="/images/projects/compressed-air-ml/cover.jpg"
+                alt="Representative image of a compressed-air system"
+              />
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">MACHINE LEARNING / INDUSTRIAL DATA</p>
+              <h2 id="project-compressed-air-ml-title">
+                Compressed-Air System ML
+              </h2>
+              <p>
+                A machine-learning workflow for classifying operating states
+                and estimating flow behaviour from compressed-air sensor data.
+              </p>
+              <ul class="skills">
+                <li>Python</li>
+                <li>Classification</li>
+                <li>Regression</li>
+                <li>Sensor Data</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Problem</h3>
+              <p>
+                Operating states such as normal use, leakage, idle behaviour,
+                and active consumption are not always obvious from raw sensor
+                signals alone.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / My contribution</h3>
+              <p>
+                I developed a data-analysis workflow for identifying system
+                states and estimating flow-related behaviour from measurements.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Technical approach</h3>
+              <p>
+                Pressure, flow, power, and related sensor variables are prepared
+                for classification and regression models and evaluated as
+                engineering signals.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / Result</h3>
+              <p>
+                The project shows how industrial sensor data can support state
+                recognition, condition monitoring, and performance analysis.
+              </p>
+            </article>
+          </div>
+          <div class="project-demonstrates">
+            <h3>What this demonstrates</h3>
+            <ul>
+              <li>Machine learning</li>
+              <li>Industrial data analysis</li>
+              <li>Sensor-based monitoring</li>
+              <li>Classification and regression</li>
+              <li>Engineering interpretation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <input
+      type="text"
+      id="textarea"
+      readonly
+      aria-label="Aminci OS terminal input"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+    />
+
+    <div id="loading" role="status" aria-live="polite">
+      <p class="section-kicker">AMINCI OS v1.0.0</p>
+      <h2>Booting project archive…</h2>
       <div id="loading-bar">
         <div id="loading-bar-progress"></div>
       </div>
-      <div id="loading-items">Starting...</div>
+      <div id="loading-items">Starting…</div>
     </div>
+
     <footer>
-      <div>Developed + Designed by Ed Hinrichsen.</div>
-      <div>Computer design based on the Commodore PET 8296.</div>
+      <div>Portfolio content and customization by Aminci Gana.</div>
       <div>
-        Built on the traditional land of the Wurundjeri and Boon Wurrung peoples
-        of the Kulin nation. I pay my respect to Elders past, present and
-        emerging.
+        Based on
+        <a
+          href="https://github.com/edhinrichsen/retro-computer-website"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Retro Computer Website
+        </a>
+        by Ed Hinrichsen, used under the
+        <a href="/LICENSE.MD">MIT License</a>.
       </div>
-      <div>
-        Sovereignty has never been ceded. It always was and always will be
-        Aboriginal land.
-      </div>
-      <div>COPYRIGHT © 2022-2024 Edward Hinrichsen.</div>
+      <div>Computer design inspired by the Commodore PET 8296.</div>
+      <div>© 2026 Aminci Gana.</div>
     </footer>
+
     <script>
       function closeMenu() {
-        document.getElementsByTagName("nav")[0].classList.remove(["active"]);
+        document.querySelector("nav")?.classList.remove("active");
       }
 
       function toggleMenu() {
-        const nav = document.getElementsByTagName("nav")[0];
-        if (nav.classList.contains("active")) {
-          nav.classList.remove(["active"]);
-        } else {
-          nav.classList.add("active");
-        }
+        document.querySelector("nav")?.classList.toggle("active");
       }
-    </script>
-    <script
-      fetchpriority="high"
-      src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"
-    ></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-EDNKHGV4HB"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-EDNKHGV4HB");
-      gtag("event", "origin", { name: window.origin });
     </script>
   </body>
 </html>

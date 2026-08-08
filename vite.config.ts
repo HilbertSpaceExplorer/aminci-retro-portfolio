@@ -9,7 +9,7 @@ export default defineConfig({
     sourcemap: false,
   },
   server: {
-    open: true,
+    open: false,
     port: 1234,
     host: "localhost",
   },
