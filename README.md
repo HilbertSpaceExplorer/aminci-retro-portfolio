@@ -1,6 +1,6 @@
 # Aminci OS
 
-A retro-computer engineering portfolio for Aminci Gana, built with TypeScript, Three.js, and Vite.
+A retro-computer engineering portfolio for my projects, built with TypeScript, Three.js, and Vite.
 
 The site combines an interactive 3D computer, a small Unix-like terminal, a markdown-backed virtual file system, and a scrollable portfolio containing robotics, computer vision, machine learning, sensing, and control projects.
 
