@@ -14,6 +14,11 @@ const germanText: Record<string, string> = {
   "About Me": "Über mich",
   Projects: "Projekte",
   Contact: "Kontakt",
+  "BACK TO ARCHIVE": "ZURÜCK ZUM ARCHIV",
+  "PREVIOUS FILE": "VORHERIGE AKTE",
+  "NEXT FILE": "NÄCHSTE AKTE",
+  "PROJECT ARCHIVE": "PROJEKTARCHIV",
+  "Back to all projects": "Zurück zu allen Projekten",
   "ABOUT ME": "ÜBER MICH",
   "My work and interests": "Meine Arbeit und Interessen",
   "I'm Aminci Gana, a mechanical engineering student interested in robotics, computer vision, machine learning, sensing, and control.":
@@ -257,6 +262,8 @@ const germanText: Record<string, string> = {
 const germanAttributes: Record<string, string> = {
   "Interactive Aminci OS retro computer": "Interaktiver Retro-Computer von Aminci OS",
   "Primary navigation": "Hauptnavigation",
+  "Back to project archive": "Zurück zum Projektarchiv",
+  "Project navigation": "Projektnavigation",
   "Toggle navigation": "Navigation öffnen oder schließen",
   "Social links": "Links zu sozialen Netzwerken",
   Language: "Sprache",
@@ -338,6 +345,7 @@ function translateActionText(key: string) {
   if (key.startsWith("OPEN ORIGINAL")) return "ORIGINAL ÖFFNEN ↗";
   if (key.startsWith("OPEN FILE")) return "AKTE ÖFFNEN";
   if (key.startsWith("Open email app")) return "E-MAIL-APP ÖFFNEN ↗";
+  if (key.startsWith("BACK TO ARCHIVE")) return "ZUM ARCHIV";
   if (key.startsWith("CLOSE")) return "SCHLIESSEN ×";
   if (key.startsWith("Scroll")) return "SCROLLEN ↓";
   return undefined;

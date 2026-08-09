@@ -150,16 +150,16 @@
       </div>
 
       <div class="menu-body" onclick="closeMenu()">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="/#home">Home</a>
+        <a href="/#about">About Me</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
       </div>
 
       <div id="tip-scroll">Scroll ↓</div>
     </nav>
 
-    <main>
+    <main id="portfolio-home">
       <section id="about">
         <p class="section-kicker">ABOUT ME</p>
         <h1>My work and interests</h1>
@@ -228,14 +228,12 @@
               </div>
             </div>
           </div>
-          <button
+          <a
             class="project-card-trigger"
-            type="button"
+            href="/projects/continuum-robot"
             data-project-dialog="project-continuum-robot"
-            aria-haspopup="dialog"
-            aria-controls="project-continuum-robot"
             aria-label="Open details for Continuum Robot Shape Prediction"
-          ></button>
+          ></a>
         </article>
 
         <article class="project project--clickable">
@@ -281,14 +279,12 @@
               </div>
             </div>
           </div>
-          <button
+          <a
             class="project-card-trigger"
-            type="button"
+            href="/projects/vision-laptimer"
             data-project-dialog="project-laptime-stopwatch"
-            aria-haspopup="dialog"
-            aria-controls="project-laptime-stopwatch"
             aria-label="Open details for Vision-Based Robot Laptimer"
-          ></button>
+          ></a>
         </article>
 
         <article class="project project--clickable">
@@ -334,14 +330,12 @@
               </div>
             </div>
           </div>
-          <button
+          <a
             class="project-card-trigger"
-            type="button"
+            href="/projects/pid-evaluation"
             data-project-dialog="project-pid-evaluation"
-            aria-haspopup="dialog"
-            aria-controls="project-pid-evaluation"
             aria-label="Open details for PID Response Evaluation"
-          ></button>
+          ></a>
         </article>
 
         <article class="project project--clickable">
@@ -387,14 +381,12 @@
               </div>
             </div>
           </div>
-          <button
+          <a
             class="project-card-trigger"
-            type="button"
+            href="/projects/compressed-air-ml"
             data-project-dialog="project-compressed-air-ml"
-            aria-haspopup="dialog"
-            aria-controls="project-compressed-air-ml"
             aria-label="Open details for Compressed-Air System ML"
-          ></button>
+          ></a>
         </article>
 
         <article class="project project--clickable">
@@ -440,14 +432,12 @@
               </div>
             </div>
           </div>
-          <button
+          <a
             class="project-card-trigger"
-            type="button"
+            href="/projects/ai-life-os"
             data-project-dialog="project-ai-life-os"
-            aria-haspopup="dialog"
-            aria-controls="project-ai-life-os"
             aria-label="Open details for AI Life OS"
-          ></button>
+          ></a>
         </article>
       </section>
 
@@ -478,10 +468,13 @@
       </section>
     </main>
 
-    <dialog
-      class="project-dialog"
+    <main id="project-pages" hidden>
+    <article
+      class="project-dialog project-page"
       id="project-continuum-robot"
       aria-labelledby="project-continuum-robot-title"
+      data-project-path="continuum-robot"
+      hidden
     >
       <div class="project-dialog-shell">
         <header class="project-dialog-bar">
@@ -590,12 +583,14 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </article>
 
-    <dialog
-      class="project-dialog"
+    <article
+      class="project-dialog project-page"
       id="project-laptime-stopwatch"
       aria-labelledby="project-laptime-stopwatch-title"
+      data-project-path="vision-laptimer"
+      hidden
     >
       <div class="project-dialog-shell">
         <header class="project-dialog-bar">
@@ -701,12 +696,14 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </article>
 
-    <dialog
-      class="project-dialog"
+    <article
+      class="project-dialog project-page"
       id="project-pid-evaluation"
       aria-labelledby="project-pid-evaluation-title"
+      data-project-path="pid-evaluation"
+      hidden
     >
       <div class="project-dialog-shell">
         <header class="project-dialog-bar">
@@ -796,12 +793,14 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </article>
 
-    <dialog
-      class="project-dialog"
+    <article
+      class="project-dialog project-page"
       id="project-compressed-air-ml"
       aria-labelledby="project-compressed-air-ml-title"
+      data-project-path="compressed-air-ml"
+      hidden
     >
       <div class="project-dialog-shell">
         <header class="project-dialog-bar">
@@ -1099,12 +1098,14 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </article>
 
-    <dialog
-      class="project-dialog"
+    <article
+      class="project-dialog project-page"
       id="project-ai-life-os"
       aria-labelledby="project-ai-life-os-title"
+      data-project-path="ai-life-os"
+      hidden
     >
       <div class="project-dialog-shell">
         <header class="project-dialog-bar">
@@ -1254,7 +1255,8 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </article>
+    </main>
 
     <dialog
       class="image-viewer"

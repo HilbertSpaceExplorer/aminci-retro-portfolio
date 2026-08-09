@@ -5,10 +5,128 @@ import {
 } from "./i18n";
 import WebGL from "./webgl";
 
-initialiseLanguage();
-WebGL();
-
 const root = document.documentElement;
+const portfolioHome = document.getElementById("portfolio-home");
+const projectPages = document.getElementById("project-pages");
+const loadingScreen = document.getElementById("loading");
+
+const projectRoutes = [
+  {
+    slug: "continuum-robot",
+    id: "project-continuum-robot",
+    title: "Continuum Robot Shape Prediction",
+  },
+  {
+    slug: "vision-laptimer",
+    id: "project-laptime-stopwatch",
+    title: "Vision-Based Robot Laptimer",
+  },
+  {
+    slug: "pid-evaluation",
+    id: "project-pid-evaluation",
+    title: "PID Response Evaluation",
+  },
+  {
+    slug: "compressed-air-ml",
+    id: "project-compressed-air-ml",
+    title: "Compressed-Air System ML",
+  },
+  {
+    slug: "ai-life-os",
+    id: "project-ai-life-os",
+    title: "AI Life OS",
+  },
+] as const;
+
+const normalisedPath = window.location.pathname.replace(/\/+$/, "") || "/";
+const currentProject = projectRoutes.find(
+  ({ slug }) => normalisedPath === `/projects/${slug}`,
+);
+
+projectRoutes.forEach((project, index) => {
+  const page = document.getElementById(project.id);
+  if (!(page instanceof HTMLElement)) return;
+
+  const backButton = page.querySelector<HTMLButtonElement>("[data-dialog-close]");
+  if (backButton) {
+    backButton.textContent = "BACK TO ARCHIVE ←";
+    backButton.setAttribute("aria-label", "Back to project archive");
+    backButton.addEventListener("click", () => {
+      window.location.href = "/#projects";
+    });
+  }
+
+  const previous = projectRoutes[(index - 1 + projectRoutes.length) % projectRoutes.length];
+  const next = projectRoutes[(index + 1) % projectRoutes.length];
+  const pageNavigation = document.createElement("div");
+  pageNavigation.className = "project-page-navigation";
+  pageNavigation.setAttribute("aria-label", "Project navigation");
+  pageNavigation.innerHTML = `
+    <a href="/projects/${previous.slug}">
+      <span>PREVIOUS FILE</span>
+      <strong>${previous.title}</strong>
+    </a>
+    <a href="/#projects" class="project-page-navigation-home">
+      <span>PROJECT ARCHIVE</span>
+      <strong>Back to all projects</strong>
+    </a>
+    <a href="/projects/${next.slug}">
+      <span>NEXT FILE</span>
+      <strong>${next.title}</strong>
+    </a>
+  `;
+  page.querySelector(".project-dialog-body")?.append(pageNavigation);
+});
+
+if (currentProject && portfolioHome && projectPages) {
+  portfolioHome.hidden = true;
+  projectPages.hidden = false;
+  root.dataset.view = "project";
+  root.dataset.scroll = "true";
+
+  projectRoutes.forEach(({ id }) => {
+    const page = document.getElementById(id);
+    if (page instanceof HTMLElement) page.hidden = id !== currentProject.id;
+  });
+
+  root.classList.remove("booting");
+  if (loadingScreen instanceof HTMLElement) loadingScreen.style.display = "none";
+} else {
+  if (portfolioHome) portfolioHome.hidden = false;
+  if (projectPages) projectPages.hidden = true;
+  projectRoutes.forEach(({ id }) => {
+    const page = document.getElementById(id);
+    if (page instanceof HTMLElement) page.hidden = true;
+  });
+}
+
+initialiseLanguage();
+
+function updateProjectMetadata() {
+  if (!currentProject) return;
+  const page = document.getElementById(currentProject.id);
+  const title = page?.querySelector("h2")?.textContent?.trim() || currentProject.title;
+  const description = page
+    ?.querySelector<HTMLElement>(".project-dialog-summary > p:not(.project-dialog-kicker)")
+    ?.textContent?.trim();
+
+  document.title = `${title} | Aminci Gana`;
+  if (description) {
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')
+      ?.setAttribute("content", description);
+    document.querySelector<HTMLMetaElement>('meta[property="og:description"]')
+      ?.setAttribute("content", description);
+  }
+  document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
+    ?.setAttribute("content", `${title} | Aminci Gana`);
+}
+
+updateProjectMetadata();
+document.querySelectorAll<HTMLButtonElement>("[data-language]").forEach((button) => {
+  button.addEventListener("click", updateProjectMetadata);
+});
+
+if (!currentProject) WebGL();
 
 function syncDialogOpenState() {
   document.body.classList.toggle(
@@ -18,41 +136,11 @@ function syncDialogOpenState() {
 }
 
 function onScroll() {
-  if (window.scrollY > 10) root.dataset.scroll = "true";
+  if (currentProject || window.scrollY > 10) root.dataset.scroll = "true";
   else root.dataset.scroll = "false";
 }
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
-
-const projectDialogTriggers =
-  document.querySelectorAll<HTMLButtonElement>("[data-project-dialog]");
-
-projectDialogTriggers.forEach((trigger) => {
-  const dialogId = trigger.dataset.projectDialog;
-  const dialog = dialogId
-    ? document.getElementById(dialogId)
-    : null;
-
-  if (!(dialog instanceof HTMLDialogElement)) return;
-
-  const closeButton =
-    dialog.querySelector<HTMLButtonElement>("[data-dialog-close]");
-
-  trigger.addEventListener("click", () => {
-    if (!dialog.open) dialog.showModal();
-    syncDialogOpenState();
-  });
-
-  closeButton?.addEventListener("click", () => dialog.close());
-
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
-  });
-
-  dialog.addEventListener("close", () => {
-    syncDialogOpenState();
-  });
-});
 
 const imageViewer = document.getElementById("project-image-viewer");
 const imageViewerImage = imageViewer?.querySelector<HTMLImageElement>(
