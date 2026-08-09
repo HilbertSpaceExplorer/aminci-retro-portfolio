@@ -27,3 +27,6 @@ yarn-error.log*
 
 # local design rollback snapshots
 /.codex-preview-backup
+
+# local Vercel project metadata
+/.vercel
