@@ -1,12 +1,12 @@
-# System Profile
+# About Me
 
 I'm Aminci Gana.
 
-Mechanical engineering student working across robotics, computer vision, machine learning, sensing, and control.
+I'm a mechanical engineering student interested in robotics, computer vision, machine learning, sensing, and control.
 
-I build experimental systems that connect hardware with data: measuring physical behaviour, modelling it, and validating results.
+My projects usually involve building or testing physical systems, collecting measurements, developing models, and comparing their results with experiments.
 
-## Current Mission
+## Current Focus
 
 Predicting continuum robot shape under external forces.
 

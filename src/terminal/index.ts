@@ -1,6 +1,7 @@
 // @ts-ignore
 import titleText from "../file-system/home/user/title/title.md?raw";
 import Bash from "./bash";
+
 export type Change = {
   type: "add" | "del" | "none";
   loc: number | "end" | "none";
@@ -94,20 +95,22 @@ export default function Terminal(screenTextEngine: {
       }
       textarea.setSelectionRange(lastSelection, lastSelection);
     }
-    // textarea
-    if (e.key === "Enter") {
-      screenTextEngine.freezeInput();
-      bash.input(textarea.value);
-
-      textarea.value = "";
-      const change = stringEditDistance(oldText, textarea.value);
-      oldText = textarea.value;
-      if (change) screenTextEngine.userInput(change, textarea.selectionStart);
-    }
   });
 
   window.addEventListener("keydown", (e) => {
     switch (e.key) {
+      case "Enter": {
+        e.preventDefault();
+        screenTextEngine.freezeInput();
+        bash.input(textarea.value);
+
+        textarea.value = "";
+        const change = stringEditDistance(oldText, textarea.value);
+        oldText = textarea.value;
+        if (change)
+          screenTextEngine.userInput(change, textarea.selectionStart);
+        break;
+      }
       case "ArrowUp":
         e.preventDefault();
         screenTextEngine.scroll(-1, "lines", {

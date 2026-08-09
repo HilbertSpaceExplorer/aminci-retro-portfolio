@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { getInitialLanguage } from "../i18n";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Font, FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
@@ -38,16 +39,19 @@ function loadAssists(callback: (assists: Assists) => any) {
   };
 
   manager.onLoad = function () {
-    if (!loadingItemsDOM) return;
-    loadingItemsDOM.textContent = `Nearly There...`;
+    if (loadingItemsDOM) {
+      loadingItemsDOM.textContent =
+        getInitialLanguage() === "de" ? "Fast fertig..." : "Nearly there...";
+    }
 
     console.log("Loading complete!");
     window.setTimeout(() => {
-      (loadingDOM as any).style.opacity = "0";
+      document.documentElement.classList.remove("booting");
+      if (loadingDOM instanceof HTMLElement) loadingDOM.style.opacity = "0";
       callback(assists as Assists);
     }, 200);
     window.setTimeout(() => {
-      (loadingDOM as any).style.display = "none";
+      if (loadingDOM instanceof HTMLElement) loadingDOM.style.display = "none";
     }, 500);
   };
 

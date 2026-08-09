@@ -21,10 +21,11 @@ function valMap(x: number, from: [number, number], to: [number, number]) {
 
 let viewHeight = document.documentElement.clientHeight;
 let scroll = window.scrollY / document.documentElement.clientHeight;
+let targetScroll = scroll;
 window.addEventListener(
   "scroll",
-  (ev) => {
-    scroll = window.scrollY / viewHeight;
+  () => {
+    targetScroll = window.scrollY / viewHeight;
   },
   { passive: true }
 );
@@ -149,8 +150,14 @@ export default function WebGL() {
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
     });
+    const updatePixelRatio = () => {
+      const pixelRatioLimit = window.innerWidth < 780 ? 1.25 : 1.5;
+      renderer.setPixelRatio(
+        Math.min(window.devicePixelRatio || 1, pixelRatioLimit)
+      );
+    };
+    updatePixelRatio();
     renderer.setSize(sizes.width, sizes.height);
-    renderer.setPixelRatio(2);
     renderer.outputEncoding = THREE.sRGBEncoding;
 
     function updateCanvasSize(width: number, height: number) {
@@ -167,8 +174,11 @@ export default function WebGL() {
         // Update sizes
 
         viewHeight = document.documentElement.clientHeight;
+        targetScroll = window.scrollY / viewHeight;
+        scroll = targetScroll;
         sizes.width = document.documentElement.clientWidth;
         sizes.height = window.innerHeight;
+        updatePixelRatio();
         updateCanvasSize(sizes.width, sizes.height);
         sizes.portraitOffset = valMap(
           sizes.height / sizes.width,
@@ -211,8 +221,34 @@ export default function WebGL() {
     assists.keyboardMesh.material = computerMaterial;
     computerGroup.add(assists.keyboardMesh);
 
-    assists.shadowPlaneMesh.material = new THREE.MeshBasicMaterial({
-      map: assists.bakeFloorTexture,
+    assists.shadowPlaneMesh.material = new THREE.ShaderMaterial({
+      uniforms: {
+        uShadowMap: { value: assists.bakeFloorTexture },
+        uShadowColor: { value: new THREE.Color(0x414a49) },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D uShadowMap;
+        uniform vec3 uShadowColor;
+        varying vec2 vUv;
+
+        void main() {
+          vec3 bakedFloor = texture2D(uShadowMap, vUv).rgb;
+          float luminance = dot(bakedFloor, vec3(0.299, 0.587, 0.114));
+          float shadowStrength = 1.0 - smoothstep(0.16, 0.62, luminance);
+
+          gl_FragColor = vec4(uShadowColor, shadowStrength * 0.42);
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
     });
     computerGroup.add(assists.shadowPlaneMesh);
 
@@ -226,10 +262,29 @@ export default function WebGL() {
      */
 
     const clock = new THREE.Clock();
-    const tick = () => {
-      stats.begin();
+    const lookAtTarget = new Vector3(0, 0, 0);
+    const screenFrameInterval = window.matchMedia("(pointer: coarse)").matches
+      ? 1 / 24
+      : 1 / 30;
+    let screenFrameAccumulator = 0;
 
-      const deltaTime = DeltaTime();
+    const tick = () => {
+      window.requestAnimationFrame(tick);
+
+      if (document.hidden) return;
+
+      const deltaTime = Math.min(DeltaTime(), 0.05);
+      const scrollEase = Math.min(1, deltaTime * 10);
+      scroll += (targetScroll - scroll) * scrollEase;
+
+      if (targetScroll >= 1.8 && scroll >= 1.75) {
+        if (canvas.style.opacity !== "0") canvas.style.opacity = "0";
+        return;
+      }
+
+      if (document.body.classList.contains("dialog-open")) return;
+
+      stats.begin();
 
       const elapsedTime = clock.getElapsedTime();
 
@@ -257,9 +312,12 @@ export default function WebGL() {
         computerParallax.y * valMap(scroll, [0, 1], [0.2, 1.5]) * 0.1 +
         camera.position.y * 0.9;
 
-      camera.lookAt(new Vector3(0, 0, 0));
+      camera.lookAt(lookAtTarget);
 
-      canvas.style.opacity = `${valMap(scroll, [1.25, 1.75], [1, 0])}`;
+      const canvasOpacity = `${valMap(scroll, [1.25, 1.75], [1, 0])}`;
+      if (canvas.style.opacity !== canvasOpacity) {
+        canvas.style.opacity = canvasOpacity;
+      }
 
       if (sizes.portraitOffset > 0.5)
         computerGroup.rotation.z = valMap(scroll, [0, 1], [-Math.PI / 2, 0]);
@@ -273,14 +331,16 @@ export default function WebGL() {
         );
       }
 
-      screen.tick(deltaTime, elapsedTime);
+      screenFrameAccumulator += deltaTime;
+      if (screenFrameAccumulator >= screenFrameInterval) {
+        screen.tick(screenFrameAccumulator, elapsedTime);
+        screenFrameAccumulator = 0;
+      }
 
       renderer.setRenderTarget(null);
       renderer.render(scene, camera);
 
       stats.end();
-      // Call tick again on the next frame
-      window.requestAnimationFrame(tick);
     };
 
     window.requestAnimationFrame(tick);

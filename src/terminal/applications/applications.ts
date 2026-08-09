@@ -15,12 +15,7 @@ export default function Applications(
   path: FileSystemType
 ) {
   const help = (args: string[], options: string[]) => {
-    let helpStr: string = helpMD;
-    Object.entries(apps).forEach((entry) => {
-      const [key, value] = entry;
-      helpStr += `\n### ${value.docs.name} - ${value.docs.short}`;
-    });
-    print(helpStr, true);
+    print(helpMD, true);
   };
   const apps = {
     ls: ls(print, path),

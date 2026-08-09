@@ -1,19 +1,15 @@
-# Aminci OS v1.0.0
+# Help
 
-Explore the engineering project archive from this terminal.
+## Type *ls* to list files
 
-## Start Here
+## Type *cd* to change folders
 
-### help - show this guide
-### show about.md - open the system profile
-### cd ~/projects - enter the project archive
-### ls - list project files
-### show 00-continuum-robot.md - open the featured project
-### show -all - render the complete archive
+## Type *show* to open .md files
 
-## Navigation
+## Use Up / Down arrows to scroll
 
-### Up / Down arrows - scroll terminal output
-### cd ~ - return to the home folder
+### Tip: try *show -all*
 
-## Available Commands
+## Commands
+
+### help / ls / cd / show / pwd / hello

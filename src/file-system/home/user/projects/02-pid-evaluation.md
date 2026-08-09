@@ -1,14 +1,14 @@
-# PID Robustness Evaluation
+# PID Response Evaluation
 
 ## 2025
 
 ### Control Engineering / Computer Vision
 ### Python / OpenCV / Data Analysis
 
-![](/images/projects/pid-evaluation/cover.jpg?aspect=1.371&width=1.2)
+![](/images/projects/pid-evaluation/pid-response.png?aspect=1.45&width=1.2)
 
-Testing how reliably a mobile robot holds distance under changing conditions.
+Measuring how a mobile robot responds relative to a target distance.
 
-Vision-based measurement is used to evaluate stability, overshoot, settling behaviour, and robustness.
+The system estimates two marker poses from video, converts their separation into a 3D distance signal, and compares the aligned and smoothed response with the target.
 
-The project combines control tuning, repeatable experiments, and data-driven performance evaluation.
+The evaluation saves the response over time and reports RMSE as a quantitative error measure.

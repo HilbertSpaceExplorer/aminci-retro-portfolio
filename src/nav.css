@@ -8,7 +8,7 @@ nav {
 
 .menu-btn {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 12px;
   position: fixed;
   top: 0;
@@ -16,7 +16,6 @@ nav {
   left: 0;
   padding: 20px;
   pointer-events: none;
-  transition: transform 0.5s;
   z-index: 1;
 }
 
@@ -25,13 +24,83 @@ nav .btn {
   pointer-events: none;
 }
 
-nav .menu-btn > .btn:first-child {
-  padding-inline: 14px;
+.menu-toggle {
+  flex: 0 0 42px;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+}
+
+.menu-toggle svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
 }
 
 .social-links {
   display: flex;
   gap: 10px;
+}
+
+.menu-actions {
+  display: contents;
+}
+
+.language-toggle {
+  display: flex;
+  gap: 3px;
+  margin-left: auto;
+  padding: 3px;
+  border: 2px solid var(--ink);
+  background: rgba(var(--panel-rgb), 0.96);
+  box-shadow: 5px 5px 0 rgba(var(--ink-rgb), 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease-out;
+}
+
+nav .language-option {
+  justify-content: center;
+  min-width: 42px;
+  height: 36px;
+  padding: 2px 8px 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ink);
+  font-family: "public-pixel", monospace;
+  font-size: 0.58rem;
+  opacity: 1;
+  pointer-events: inherit;
+  transition:
+    background-color 0.14s ease-out,
+    color 0.14s ease-out;
+  transform: none;
+}
+
+nav .language-option[aria-pressed="true"] {
+  background: var(--ink);
+  box-shadow: none;
+  color: var(--panel);
+}
+
+nav .language-option:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+nav .language-option:not([aria-pressed="true"]):hover,
+nav .language-option:not([aria-pressed="true"]):focus-visible {
+  background: rgba(var(--accent-rgb), 0.22);
+  color: var(--ink);
+  box-shadow: none;
+  transform: none;
+}
+
+nav .language-option:active {
+  box-shadow: none;
+  transform: none;
 }
 
 .social-links .social-link {
@@ -58,6 +127,12 @@ nav.active .btn {
   pointer-events: auto;
 }
 
+html[data-scroll="true"] .language-toggle,
+nav.active .language-toggle {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 nav.active .btn {
   border-color: var(--ink);
   background: var(--paper);
@@ -73,12 +148,37 @@ nav.active .btn:active {
   box-shadow: 4px 4px 0 rgba(var(--paper-rgb), 0.7);
 }
 
+nav.active .language-option {
+  background: transparent;
+  box-shadow: none;
+  color: var(--ink);
+}
+
+nav.active .language-option[aria-pressed="true"] {
+  background: var(--ink);
+  box-shadow: none;
+  color: var(--paper);
+}
+
+nav.active .language-option:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+nav.active .language-option:not([aria-pressed="true"]):hover,
+nav.active .language-option:not([aria-pressed="true"]):focus-visible {
+  background: rgba(var(--accent-rgb), 0.22);
+  box-shadow: none;
+  color: var(--ink);
+  transform: none;
+}
+
 .menu-body {
   display: inline-flex;
   flex-direction: column;
   gap: 18px;
   position: fixed;
-  inset: 0 100vw 0 -100px;
+  inset: 0;
   overflow: hidden;
   padding: 92px 24px 24px;
   background: var(--ink);
@@ -87,14 +187,19 @@ nav.active .btn:active {
   font-size: clamp(1.6rem, 6vw, 2.5rem);
   opacity: 0;
   transition:
-    inset 0.55s,
-    opacity 0.4s;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease-out;
+  transform: translate3d(-100%, 0, 0);
+  will-change: transform;
   z-index: 0;
 }
 
 .menu-body a {
   width: fit-content;
   text-decoration: none;
+  transition:
+    color 0.15s ease-out,
+    transform 0.15s ease-out;
 }
 
 .menu-body a:hover {
@@ -103,8 +208,8 @@ nav.active .btn:active {
 }
 
 nav.active .menu-body {
-  inset: 0;
   opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 #tip-scroll {
@@ -134,12 +239,42 @@ nav.active #tip-scroll {
     justify-content: flex-start;
   }
 
-  nav.active .menu-btn {
-    transform: translateX(28px);
-  }
-
   .menu-body {
     padding-left: 52px;
+  }
+}
+
+@media (max-width: 539px) {
+  .menu-btn {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .social-links {
+    gap: 6px;
+  }
+
+  .social-links .social-link {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-toggle {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .language-toggle {
+    gap: 2px;
+    padding: 2px;
+  }
+
+  nav .language-option {
+    min-width: 36px;
+    height: 32px;
+    padding-inline: 6px;
   }
 }
 

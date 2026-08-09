@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="booting">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
     />
 
-    <title>Aminci OS — Robotics &amp; Engineering Portfolio</title>
+    <title>Aminci OS | Robotics &amp; Engineering Portfolio</title>
     <meta
       name="description"
       content="Aminci Gana is a mechanical engineering student building robotics, computer vision, machine learning, sensing, and control systems."
@@ -17,11 +17,11 @@
 
     <meta
       property="og:title"
-      content="Aminci OS — Robotics &amp; Engineering Portfolio"
+      content="Aminci OS | Robotics &amp; Engineering Portfolio"
     />
     <meta
       property="og:description"
-      content="Robotics, computer vision, machine learning, sensing, and control projects by Aminci Gana."
+      content="Robotics, computer vision, machine learning, AI systems, sensing, and control projects by Aminci Gana."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/icon/og-img1.png" />
@@ -31,11 +31,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Aminci OS — Robotics &amp; Engineering Portfolio"
+      content="Aminci OS | Robotics &amp; Engineering Portfolio"
     />
     <meta
       name="twitter:description"
-      content="Robotics, computer vision, machine learning, sensing, and control projects by Aminci Gana."
+      content="Robotics, computer vision, machine learning, AI systems, sensing, and control projects by Aminci Gana."
     />
     <meta name="twitter:image" content="/icon/og-img1.png" />
 
@@ -48,6 +48,36 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+
+    <link rel="preload" href="/fonts/public-pixel.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/fonts/chill.woff" as="font" type="font/woff" crossorigin />
+
+    <style>
+      html.booting,
+      html.booting body {
+        min-height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #414a49;
+      }
+
+      html.booting body > :not(#loading) {
+        visibility: hidden;
+      }
+
+      html.booting #loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+        position: fixed;
+        inset: 0;
+        padding: 10vw;
+        background: #414a49;
+        color: #d4ebe5;
+        z-index: 9999;
+      }
+    </style>
 
     <script type="module" src="/src/main.ts"></script>
   </head>
@@ -69,48 +99,59 @@
     <nav aria-label="Primary navigation">
       <div class="menu-btn">
         <button
-          class="btn"
+          class="btn menu-toggle"
           type="button"
           aria-label="Toggle navigation"
           onclick="toggleMenu()"
         >
-          <svg width="16" height="16" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
             <rect width="16" height="3.2" />
             <rect y="6.4" width="16" height="3.2" />
             <rect y="12.8" width="16" height="3.2" />
           </svg>
         </button>
-        <div class="social-links" aria-label="Social links">
-          <a
-            class="btn social-link"
-            href="https://www.linkedin.com/in/aminci-jonathan-gana-257903389/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Aminci Gana on LinkedIn"
-            title="LinkedIn"
+        <div class="menu-actions">
+          <div class="social-links" aria-label="Social links">
+            <a
+              class="btn social-link"
+              href="https://www.linkedin.com/in/aminci-jonathan-gana-257903389/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Aminci Gana on LinkedIn"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.1 20.45H3.54V9H7.1v11.45Z" />
+              </svg>
+            </a>
+            <a
+              class="btn social-link"
+              href="https://github.com/HilbertSpaceExplorer"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Aminci Gana on GitHub"
+              title="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.24c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.28 5.68.42.36.79 1.07.79 2.16v3.25c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+              </svg>
+            </a>
+          </div>
+          <div
+            class="language-toggle"
+            role="group"
+            aria-label="Page language. Terminal remains in English."
+            title="Page language. Terminal remains in English."
           >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.1 20.45H3.54V9H7.1v11.45Z" />
-            </svg>
-          </a>
-          <a
-            class="btn social-link"
-            href="https://github.com/HilbertSpaceExplorer"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Aminci Gana on GitHub"
-            title="GitHub"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.24c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.28 5.68.42.36.79 1.07.79 2.16v3.25c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
-            </svg>
-          </a>
+            <button class="btn language-option" type="button" data-language="en" aria-pressed="true">EN</button>
+            <button class="btn language-option" type="button" data-language="de" aria-pressed="false">DE</button>
+          </div>
         </div>
       </div>
 
       <div class="menu-body" onclick="closeMenu()">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
@@ -120,19 +161,19 @@
 
     <main>
       <section id="about">
-        <p class="section-kicker">SYSTEM PROFILE</p>
-        <h1>Hardware meets data</h1>
+        <p class="section-kicker">ABOUT ME</p>
+        <h1>My work and interests</h1>
         <p>
-          I’m Aminci Gana, a mechanical engineering student working across
+          I’m Aminci Gana, a mechanical engineering student interested in
           robotics, computer vision, machine learning, sensing, and control.
         </p>
         <p>
-          I build experimental systems that measure physical behaviour, turn
-          measurements into models, and validate the results against real
-          hardware.
+          My projects usually involve building or testing physical systems,
+          collecting measurements, developing models, and comparing their
+          results with experiments.
         </p>
         <div class="mission">
-          <span>Current mission</span>
+          <span>Current focus</span>
           <strong>Predicting continuum robot shape under external forces.</strong>
         </div>
       </section>
@@ -147,12 +188,23 @@
             <span>IN PROGRESS · PUBLIC SUMMARY</span>
           </header>
           <div class="project-layout">
-            <figure class="project-media project-media--contain">
-              <img
-                src="/images/projects/continuum-robot/cover.png"
-                alt="Representative continuum robot illustration"
-                loading="lazy"
-              />
+            <figure class="project-media project-media--contain project-media--credited">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the continuum-robot reference image at full size"
+              >
+                <img
+                  src="/images/projects/continuum-robot/open-continuum-robot-prototypes.jpg"
+                  alt="Public reference image showing planar tendon-driven, spatial tendon-driven, and concentric-tube continuum robot prototypes"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
+              <figcaption class="project-media-credit">
+                Public reference examples, not the confidential project hardware.
+              </figcaption>
             </figure>
             <div class="project-copy">
               <div class="project-heading">
@@ -192,12 +244,20 @@
             <span>VISION SYSTEM · 2025</span>
           </header>
           <div class="project-layout">
-            <figure class="project-media">
-              <img
-                src="/images/projects/laptime-stopwatch/cover.jpg"
-                alt="Representative image of a mobile robot test platform"
-                loading="lazy"
-              />
+            <figure class="project-media project-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the lap-timer experiment screenshot at full size"
+              >
+                <img
+                  src="/images/projects/laptime-stopwatch/experiment-screenshot.png"
+                  alt="Recorded lap-timer test running in VS Code"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-copy">
               <div class="project-heading">
@@ -237,22 +297,30 @@
             <span>CONTROL TEST · 2025</span>
           </header>
           <div class="project-layout">
-            <figure class="project-media">
-              <img
-                src="/images/projects/pid-evaluation/cover.jpg"
-                alt="Representative distance-control illustration"
-                loading="lazy"
-              />
+            <figure class="project-media project-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the PID response plot at full size"
+              >
+                <img
+                  src="/images/projects/pid-evaluation/pid-response.png"
+                  alt="Illustrative PID distance response with target, error, and RMSE"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-copy">
               <div class="project-heading">
-                <h2>PID Robustness Evaluation</h2>
+                <h2>PID Response Evaluation</h2>
                 <h3>CONTROL ENGINEERING / EXPERIMENTAL VALIDATION</h3>
               </div>
               <p>
-                Vision-based measurement and repeatable experiments used to
-                assess stability, overshoot, settling behaviour, and robustness
-                in a mobile robot distance controller.
+                A camera tracks two markers in 3D, filters their measured
+                separation, and compares the distance response with a target
+                using a saved time trace and RMSE.
               </p>
               <ul class="skills">
                 <li>Control Engineering</li>
@@ -272,7 +340,7 @@
             data-project-dialog="project-pid-evaluation"
             aria-haspopup="dialog"
             aria-controls="project-pid-evaluation"
-            aria-label="Open details for PID Robustness Evaluation"
+            aria-label="Open details for PID Response Evaluation"
           ></button>
         </article>
 
@@ -282,12 +350,20 @@
             <span>ML ANALYSIS · 2025</span>
           </header>
           <div class="project-layout">
-            <figure class="project-media">
-              <img
-                src="/images/projects/compressed-air-ml/cover.jpg"
-                alt="Representative image of a compressed-air system"
-                loading="lazy"
-              />
+            <figure class="project-media project-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the compressed-air feature-space plot at full size"
+              >
+                <img
+                  src="/images/projects/compressed-air-ml/classification-feature-space.png"
+                  alt="Feature-space plot calculated from compressed-air sensor data"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-copy">
               <div class="project-heading">
@@ -320,23 +396,85 @@
             aria-label="Open details for Compressed-Air System ML"
           ></button>
         </article>
+
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 05</span>
+            <span>PRIVATE ALPHA · IN DEVELOPMENT</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media project-media--contain project-media--phone">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the Life OS Today screen at full size"
+              >
+                <img
+                  src="/images/projects/ai-life-os/today-screen.jpg"
+                  alt="Actual Life OS Today screen with demo data"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>AI Life OS</h2>
+                <h3>PERSONAL AI / MOBILE SYSTEMS / PRODUCT DESIGN</h3>
+              </div>
+              <p>
+                A mobile application I am developing to explore how AI can help
+                organise goals, compare priorities, and prepare realistic
+                schedules while keeping the user in control of every change.
+              </p>
+              <ul class="skills">
+                <li>React Native</li>
+                <li>TypeScript</li>
+                <li>AI Systems</li>
+                <li>Local-First Data</li>
+                <li>Product Design</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>→</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="project-card-trigger"
+            type="button"
+            data-project-dialog="project-ai-life-os"
+            aria-haspopup="dialog"
+            aria-controls="project-ai-life-os"
+            aria-label="Open details for AI Life OS"
+          ></button>
+        </article>
       </section>
 
       <section id="contact">
         <p class="section-kicker">CONTACT</p>
-        <h1>Let’s build something that moves</h1>
-        <p>
-          For engineering, robotics, and research conversations, email me
-          directly.
+        <h1>Contact me</h1>
+        <p class="contact-intro">
+          Email is the best way to contact me.
         </p>
+        <p class="contact-email">amincigana@gmail.com</p>
         <div class="contact-action">
-          <a
+          <button
             class="btn"
+            type="button"
+            data-copy-email="amincigana@gmail.com"
+            aria-describedby="contact-feedback"
+          >
+            Copy email
+          </button>
+          <a
+            class="btn btn--secondary"
             href="mailto:amincigana@gmail.com?subject=Portfolio%20Contact"
           >
-            amincigana@gmail.com ↗
+            Open email app ↗
           </a>
         </div>
+        <p id="contact-feedback" class="contact-feedback" aria-live="polite"></p>
       </section>
     </main>
 
@@ -357,11 +495,33 @@
         </header>
         <div class="project-dialog-body">
           <div class="project-dialog-hero">
-            <figure class="project-dialog-media project-dialog-media--contain">
-              <img
-                src="/images/projects/continuum-robot/cover.png"
-                alt="Representative continuum robot illustration"
-              />
+            <figure class="project-dialog-media project-dialog-media--contain project-dialog-media--credited">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the continuum-robot reference image at full size"
+              >
+                <img
+                  src="/images/projects/continuum-robot/open-continuum-robot-prototypes.jpg"
+                  alt="Public reference image showing planar tendon-driven, spatial tendon-driven, and concentric-tube continuum robot prototypes"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
+              <figcaption class="project-media-credit">
+                Reference image: Grassmann et al. (2024), Figure 7,
+                <a
+                  href="https://www.frontiersin.org/articles/10.3389/frobt.2024.1272403/full"
+                  target="_blank"
+                  rel="noreferrer"
+                >Frontiers in Robotics and AI</a>,
+                <a
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noreferrer"
+                >CC BY 4.0</a>. The image shows public reference examples, not
+                the confidential project hardware.
+              </figcaption>
             </figure>
             <div class="project-dialog-summary">
               <p class="project-dialog-kicker">ROBOTICS / SENSING / MODEL VALIDATION</p>
@@ -380,7 +540,7 @@
                 <li>Force Sensing</li>
               </ul>
               <p class="project-confidentiality">
-                CONFIDENTIALITY NOTE — Specific geometry, datasets, institute
+                CONFIDENTIALITY NOTE: Specific geometry, datasets, institute
                 equipment, and results are intentionally omitted.
               </p>
             </div>
@@ -419,7 +579,7 @@
             </article>
           </div>
           <div class="project-demonstrates">
-            <h3>What this demonstrates</h3>
+            <h3>Methods and skills</h3>
             <ul>
               <li>Experimental design</li>
               <li>Sensor integration</li>
@@ -449,11 +609,19 @@
         </header>
         <div class="project-dialog-body">
           <div class="project-dialog-hero">
-            <figure class="project-dialog-media">
-              <img
-                src="/images/projects/laptime-stopwatch/cover.jpg"
-                alt="Representative image of a mobile robot test platform"
-              />
+            <figure class="project-dialog-media project-dialog-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the lap-timer experiment screenshot at full size"
+              >
+                <img
+                  src="/images/projects/laptime-stopwatch/experiment-screenshot.png"
+                  alt="Recorded lap-timer test running in VS Code"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-dialog-summary">
               <p class="project-dialog-kicker">ROBOTICS / COMPUTER VISION</p>
@@ -461,8 +629,9 @@
                 Vision-Based Robot Laptimer
               </h2>
               <p>
-                A camera-based stopwatch that detects robot crossing events and
-                records lap times for more repeatable performance testing.
+                A camera-based stopwatch that tracks two ArUco markers,
+                estimates their 3D separation, and uses successive distance
+                minima to calculate lap intervals.
               </p>
               <ul class="skills">
                 <li>Python</li>
@@ -472,6 +641,21 @@
               </ul>
             </div>
           </div>
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/laptime-stopwatch/distance-minima.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/laptime-stopwatch/distance-minima.png"
+                alt="Illustrative marker-distance signal with detected local minima"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE PLOT ↗</span>
+            </a>
+          </figure>
           <div class="project-detail-grid">
             <article class="project-detail-card">
               <h3>01 / Problem</h3>
@@ -483,16 +667,17 @@
             <article class="project-detail-card">
               <h3>02 / My contribution</h3>
               <p>
-                I built a vision-based timing workflow that detects a robot at
-                a defined start and finish region and records crossing events.
+                I built a vision-based timing workflow that detects two
+                fiducial markers and derives lap events from their changing
+                spatial relationship.
               </p>
             </article>
             <article class="project-detail-card">
               <h3>03 / Technical approach</h3>
               <p>
-                OpenCV processes the video stream, tracks the relevant marker,
-                filters repeated detections, and converts valid events into lap
-                measurements.
+                OpenCV detects the markers and estimates their poses. A
+                five-sample moving average filters the 3D distance signal, and
+                successive local minima define the lap intervals.
               </p>
             </article>
             <article class="project-detail-card">
@@ -505,7 +690,7 @@
             </article>
           </div>
           <div class="project-demonstrates">
-            <h3>What this demonstrates</h3>
+            <h3>Methods and skills</h3>
             <ul>
               <li>Practical computer vision</li>
               <li>Automated measurement</li>
@@ -535,16 +720,24 @@
         </header>
         <div class="project-dialog-body">
           <div class="project-dialog-hero">
-            <figure class="project-dialog-media">
-              <img
-                src="/images/projects/pid-evaluation/cover.jpg"
-                alt="Representative distance-control illustration"
-              />
+            <figure class="project-dialog-media project-dialog-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the PID response plot at full size"
+              >
+                <img
+                  src="/images/projects/pid-evaluation/pid-response.png"
+                  alt="Illustrative PID distance response with target, error, and RMSE"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-dialog-summary">
               <p class="project-dialog-kicker">CONTROL / VISION / DATA ANALYSIS</p>
               <h2 id="project-pid-evaluation-title">
-                PID Robustness Evaluation
+                PID Response Evaluation
               </h2>
               <p>
                 A quantitative workflow for evaluating distance-control
@@ -572,15 +765,15 @@
               <h3>02 / My contribution</h3>
               <p>
                 I developed a vision-based evaluation workflow for measuring
-                how robustly a mobile robot maintains a target distance.
+                how a mobile robot responds relative to a target distance.
               </p>
             </article>
             <article class="project-detail-card">
               <h3>03 / Technical approach</h3>
               <p>
-                Video-derived measurements support analysis of distance error,
-                overshoot, oscillation, settling behaviour, and sensitivity to
-                disturbances.
+                Marker poses are estimated from video and converted to a 3D
+                distance signal. The aligned and smoothed response is compared
+                with the target and summarised with RMSE.
               </p>
             </article>
             <article class="project-detail-card">
@@ -592,12 +785,12 @@
             </article>
           </div>
           <div class="project-demonstrates">
-            <h3>What this demonstrates</h3>
+            <h3>Methods and skills</h3>
             <ul>
               <li>Control engineering</li>
               <li>Vision-based measurement</li>
               <li>Quantitative evaluation</li>
-              <li>Robustness analysis</li>
+              <li>Response analysis</li>
               <li>Experimental validation</li>
             </ul>
           </div>
@@ -622,11 +815,19 @@
         </header>
         <div class="project-dialog-body">
           <div class="project-dialog-hero">
-            <figure class="project-dialog-media">
-              <img
-                src="/images/projects/compressed-air-ml/cover.jpg"
-                alt="Representative image of a compressed-air system"
-              />
+            <figure class="project-dialog-media project-dialog-media--contain">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the compressed-air feature-space plot at full size"
+              >
+                <img
+                  src="/images/projects/compressed-air-ml/classification-feature-space.png"
+                  alt="Feature-space plot calculated from compressed-air sensor data"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
             </figure>
             <div class="project-dialog-summary">
               <p class="project-dialog-kicker">MACHINE LEARNING / INDUSTRIAL DATA</p>
@@ -635,7 +836,7 @@
               </h2>
               <p>
                 A machine-learning workflow for classifying operating states
-                and estimating flow behaviour from compressed-air sensor data.
+                and estimating system power from compressed-air sensor data.
               </p>
               <ul class="skills">
                 <li>Python</li>
@@ -645,40 +846,249 @@
               </ul>
             </div>
           </div>
+          <section class="project-analysis-section">
+            <p class="project-dialog-kicker">DATASET AND QUESTION</p>
+            <h3>What I analysed</h3>
+            <p>
+              The project uses measured pressure, volume-flow, and system-power
+              logs from a compressed-air system. I treated classification and
+              regression as two separate engineering questions: identifying
+              the current operating state, and estimating mean power at a given
+              measured flow rate.
+            </p>
+            <p>
+              The classification data contains four recordings of roughly 15
+              minutes each: healthy idle, healthy serving, leak idle, and leak
+              serving. The regression data contains eight constant-flow trials
+              with nominal setpoints from 300 to 1000 L/min.
+            </p>
+          </section>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/operating-state-signals.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/operating-state-signals.png"
+                alt="Measured flow traces for four compressed-air operating states"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE SIGNAL COMPARISON ↗</span>
+            </a>
+          </figure>
+
           <div class="project-detail-grid">
             <article class="project-detail-card">
-              <h3>01 / Problem</h3>
+              <h3>01 / Data inspection</h3>
               <p>
-                Operating states such as normal use, leakage, idle behaviour,
-                and active consumption are not always obvious from raw sensor
-                signals alone.
+                I compared the recorded signals across all four states and
+                checked their ranges, time behaviour, missing values, offsets,
+                and sensor artefacts before selecting model inputs.
               </p>
             </article>
             <article class="project-detail-card">
-              <h3>02 / My contribution</h3>
+              <h3>02 / Feature windows</h3>
               <p>
-                I developed a data-analysis workflow for identifying system
-                states and estimating flow-related behaviour from measurements.
+                Each recording was divided into non-overlapping 19-second
+                windows. This produced 192 usable samples, with 48 windows for
+                each operating state.
               </p>
             </article>
             <article class="project-detail-card">
-              <h3>03 / Technical approach</h3>
+              <h3>03 / Feature choice</h3>
               <p>
-                Pressure, flow, power, and related sensor variables are prepared
-                for classification and regression models and evaluated as
-                engineering signals.
+                Mean flow represents the overall level of air use, while
+                minimum flow indicates whether consumption returns towards
+                zero. Together, these two features separate most of the four
+                operating conditions without an unnecessarily complex model.
               </p>
             </article>
             <article class="project-detail-card">
-              <h3>04 / Result</h3>
+              <h3>04 / Engineering interpretation</h3>
               <p>
-                The project shows how industrial sensor data can support state
-                recognition, condition monitoring, and performance analysis.
+                A leak can create a persistent flow baseline during idle
+                periods. Active serving changes the mean level, although long
+                continuous consumption can resemble a leak and remains an
+                important ambiguity to consider.
+              </p>
+            </article>
+          </div>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/feature-window-extraction.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/feature-window-extraction.png"
+                alt="Measured flow divided into 19-second windows with mean and minimum features"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE FEATURE PLOT ↗</span>
+            </a>
+          </figure>
+
+          <section class="project-analysis-section">
+            <p class="project-dialog-kicker">CLASSIFICATION</p>
+            <h3>From features to operating states</h3>
+            <p>
+              I used a decision tree because its rules can be inspected and
+              related back to flow thresholds. A stratified 70/30 split kept
+              the four classes represented in both the training and test sets.
+            </p>
+            <p>
+              Tree depth was varied from 1 to 12. Accuracy improved sharply up
+              to depth 5, then test performance declined while training
+              accuracy approached 100 percent. I therefore used depth 5 for
+              the displayed evaluation instead of selecting the deepest tree.
+            </p>
+          </section>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/tree-depth-validation.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/tree-depth-validation.png"
+                alt="Training and test accuracy plotted against decision-tree depth"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE MODEL-SELECTION PLOT ↗</span>
+            </a>
+          </figure>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/classification-results.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/classification-results.png"
+                alt="Decision regions and confusion matrix for the four-state classifier"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE CLASSIFICATION RESULTS ↗</span>
+            </a>
+          </figure>
+
+          <section class="project-analysis-section">
+            <p class="project-dialog-kicker">CLASSIFICATION RESULT</p>
+            <h3>What the hold-out test showed</h3>
+            <p>
+              The depth-5 tree classified 57 of 58 held-out windows correctly,
+              corresponding to 98.3 percent accuracy on this split. The single
+              error was a healthy-serving window classified as leak-serving.
+              This result describes this controlled dataset and split; it is
+              not evidence that the same accuracy would hold for every machine
+              or operating environment.
+            </p>
+          </section>
+
+          <section class="project-analysis-section">
+            <p class="project-dialog-kicker">POWER REGRESSION</p>
+            <h3>Relating measured flow to mean system power</h3>
+            <p>
+              For each constant-flow experiment, I calculated the mean measured
+              volume flow and mean system power. I used the measured flow rather
+              than the nominal setpoint because the actual operating point is
+              what determines the recorded power demand.
+            </p>
+          </section>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/constant-flow-trials.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/constant-flow-trials.png"
+                alt="Measured flow and power traces from the 300 and 1000 L/min trials"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE TRIAL COMPARISON ↗</span>
+            </a>
+          </figure>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/power-regression.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/power-regression.png"
+                alt="Measured compressor power plotted against mean measured volume flow"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE POWER REGRESSION ↗</span>
+            </a>
+          </figure>
+
+          <figure class="project-diagram">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/compressed-air-ml/regression-validation.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/compressed-air-ml/regression-validation.png"
+                alt="Leave-one-experiment-out predictions and residuals for the power model"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE REGRESSION VALIDATION ↗</span>
+            </a>
+          </figure>
+
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>05 / Regression fit</h3>
+              <p>
+                Across the eight constant-flow trials, the linear relation
+                between mean measured flow and mean power had an in-sample R²
+                of 0.991.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>06 / Validation</h3>
+              <p>
+                Leave-one-experiment-out validation produced an RMSE of 0.213
+                kW and an R² of 0.985. Every trial was predicted once by a model
+                fitted without that trial.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>07 / Limitation</h3>
+              <p>
+                Eight controlled operating points are enough to examine the
+                trend, but not enough to establish behaviour outside the tested
+                flow range or under different equipment conditions.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>08 / Next step</h3>
+              <p>
+                A stronger validation would use new recordings collected on a
+                different day, additional transient states, and repeated trials
+                at each operating point.
               </p>
             </article>
           </div>
           <div class="project-demonstrates">
-            <h3>What this demonstrates</h3>
+            <h3>Methods and skills</h3>
             <ul>
               <li>Machine learning</li>
               <li>Industrial data analysis</li>
@@ -688,6 +1098,193 @@
             </ul>
           </div>
         </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="project-dialog"
+      id="project-ai-life-os"
+      aria-labelledby="project-ai-life-os-title"
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 05</span>
+            <span>PRIVATE ALPHA · IN DEVELOPMENT</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE ×
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media project-dialog-media--contain project-dialog-media--phone">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the Life OS Today screen at full size"
+              >
+                <img
+                  src="/images/projects/ai-life-os/today-screen.jpg"
+                  alt="Actual Life OS Today screen with demo data"
+                />
+                <span>VIEW FULL SIZE ↗</span>
+              </button>
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">PERSONAL AI / MOBILE SYSTEMS</p>
+              <h2 id="project-ai-life-os-title">AI Life OS</h2>
+              <p>
+                A mobile application exploring how AI can support goal
+                planning, scheduling, coaching, and tutoring. Schedule changes
+                are proposed by the system and reviewed by the user before
+                being applied.
+              </p>
+              <ul class="skills">
+                <li>React Native / Expo</li>
+                <li>TypeScript</li>
+                <li>SQLite</li>
+                <li>Human-in-the-Loop AI</li>
+              </ul>
+              <p class="project-confidentiality">
+                DEVELOPMENT NOTE: This is a selective public overview. Source
+                 code, agent logic, internal data structures, and the commercial
+                 roadmap remain private. The screens shown use non-sensitive demo data.
+              </p>
+            </div>
+          </div>
+          <figure class="project-diagram project-diagram--phone">
+            <a
+              class="project-diagram-link"
+              href="/images/projects/ai-life-os/tutor-screen.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/images/projects/ai-life-os/tutor-screen.jpg"
+                alt="Actual Life OS interactive Tutor screen with demo data"
+                loading="lazy"
+              />
+              <span>OPEN FULL-SIZE SCREENSHOT ↗</span>
+            </a>
+          </figure>
+          <div class="project-origin-story">
+            <p class="project-dialog-kicker">PROJECT MOTIVATION</p>
+            <h3>Why I started building it</h3>
+            <p>
+              I often work on several projects and personal goals at the same
+              time. I do not always prioritise the most important task, and
+              poor planning can leave me thinking about the entire backlog
+              instead of starting one task. That is usually when I
+              procrastinate.
+            </p>
+            <p>
+              I started Life OS to explore whether an AI system could help me
+              break goals into manageable steps, compare priorities, and create
+              realistic schedules. The underlying issue is common: work,
+              study, personal responsibilities, and longer-term goals compete
+              for the same limited time, while plans also need to change when
+              circumstances do.
+            </p>
+          </div>
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Problem</h3>
+              <p>
+                Managing goals involves more than recording tasks. It also
+                requires deciding priorities, estimating time, accounting for
+                fixed commitments, and adjusting when work takes longer than
+                expected.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / Design constraint</h3>
+              <p>
+                AI assistance needs clear boundaries. The system proposes
+                tasks, schedules, reminders, and adjustments, but the user must
+                accept, modify, or reject them before they are saved.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Current build</h3>
+              <p>
+                The private alpha includes AI-assisted goal breakdown,
+                scheduling and replanning, contextual coaching, tutoring, and
+                local storage for personal information.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / System approach</h3>
+              <p>
+                A mobile interface and local-first data layer connect to a
+                secured cloud AI gateway, balancing useful context with clear
+                user approval and privacy boundaries.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>05 / Technical skills</h3>
+              <p>
+                The project requires mobile development with React Native and
+                TypeScript, SQLite data management, API integration, LLM
+                orchestration, input validation, and privacy and security
+                design.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>06 / Non-technical skills</h3>
+              <p>
+                It also involves translating a personal workflow problem into
+                requirements, prioritising features, designing understandable
+                approval flows, testing assumptions, and evaluating AI output
+                critically.
+              </p>
+            </article>
+          </div>
+          <div class="project-demonstrates">
+            <h3>Skills involved</h3>
+            <ul>
+              <li>Mobile development</li>
+              <li>AI integration</li>
+              <li>Data architecture</li>
+              <li>Product scoping</li>
+              <li>User-centred design</li>
+              <li>Privacy and security thinking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="image-viewer"
+      id="project-image-viewer"
+      aria-label="Full-size project image"
+    >
+      <div class="image-viewer-shell">
+        <div class="image-viewer-actions">
+          <a
+            class="image-viewer-open"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+            data-image-viewer-open
+          >
+            OPEN ORIGINAL ↗
+          </a>
+          <button
+            class="image-viewer-close"
+            type="button"
+            data-image-viewer-close
+            aria-label="Close full-size image"
+          >
+            CLOSE ×
+          </button>
+        </div>
+        <figure>
+          <img data-image-viewer-image src="" alt="" />
+          <figcaption data-image-viewer-caption></figcaption>
+        </figure>
       </div>
     </dialog>
 
