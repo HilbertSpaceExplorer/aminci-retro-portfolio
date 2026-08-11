@@ -1,11 +1,16 @@
-# Continuum Robot Shape Prediction
+
+
+
+
+# Continuum Robot Shape 
+# Prediction
 
 ## 2026 / In Progress
 
 ### Robotics / Stereo Vision / Force Sensing
 ### MATLAB / Simulink / Python
 
-![](/images/projects/continuum-robot/open-continuum-robot-prototypes.jpg?aspect=2.227&width=1.2)
+![](/images/terminal/projects/continuum-robot/physical-prototype-detail.png?aspect=1.73&width=1.2)
 
 Public reference examples from Grassmann et al. (2024), Figure 7, CC BY 4.0. The image does not show the confidential project hardware.
 

@@ -1,3 +1,7 @@
+
+
+
+
 # AI Life OS
 
 ## Private Alpha / In Development
@@ -5,7 +9,7 @@
 ### Personal AI / Mobile Systems / Product Design
 ### React Native / TypeScript / SQLite
 
-![](/images/projects/ai-life-os/today-screen.jpg?aspect=0.486&width=0.75)
+![](/images/terminal/projects/ai-life-os/today-screen-readable.png?aspect=0.486&width=0.75)
 
 ## Why I started building it
 
@@ -28,5 +32,3 @@ React Native and TypeScript development, SQLite data management, API integration
 Turning an everyday workflow problem into requirements, prioritising features, designing understandable approval flows, testing assumptions, and evaluating AI output critically.
 
 This is a selective public overview. Source code, agent logic, internal data structures, and the commercial roadmap remain private.
-
-![](/images/projects/ai-life-os/tutor-screen.jpg?aspect=0.486&width=0.75)
