@@ -9,6 +9,7 @@ const root = document.documentElement;
 const portfolioHome = document.getElementById("portfolio-home");
 const projectPages = document.getElementById("project-pages");
 const loadingScreen = document.getElementById("loading");
+const cvLinks = document.querySelectorAll<HTMLAnchorElement>("[data-cv-link]");
 
 const projectRoutes = [
   {
@@ -17,26 +18,41 @@ const projectRoutes = [
     title: "Continuum Robot Shape Prediction",
   },
   {
-    slug: "vision-laptimer",
-    id: "project-laptime-stopwatch",
-    title: "Vision-Based Robot Laptimer",
-  },
-  {
-    slug: "pid-evaluation",
-    id: "project-pid-evaluation",
-    title: "PID Response Evaluation",
-  },
-  {
     slug: "compressed-air-ml",
     id: "project-compressed-air-ml",
     title: "Compressed-Air System ML",
+  },
+  {
+    slug: "vision-laptimer",
+    id: "project-laptime-stopwatch",
+    title: "Vision-Based Robot Laptimer",
   },
   {
     slug: "ai-life-os",
     id: "project-ai-life-os",
     title: "AI Life OS",
   },
+  {
+    slug: "pid-evaluation",
+    id: "project-pid-evaluation",
+    title: "PID Response Evaluation",
+  },
 ] as const;
+
+const projectsSection = document.getElementById("projects");
+if (projectsSection) {
+  projectRoutes.forEach((project, index) => {
+    const trigger = projectsSection.querySelector<HTMLElement>(
+      `[data-project-dialog="${project.id}"]`,
+    );
+    const card = trigger?.closest<HTMLElement>(".project");
+    if (!card) return;
+
+    const fileLabel = card.querySelector<HTMLElement>(".project-filebar span");
+    if (fileLabel) fileLabel.textContent = `LAB FILE ${String(index + 1).padStart(2, "0")}`;
+    projectsSection.append(card);
+  });
+}
 
 const normalisedPath = window.location.pathname.replace(/\/+$/, "") || "/";
 const currentProject = projectRoutes.find(
@@ -46,6 +62,11 @@ const currentProject = projectRoutes.find(
 projectRoutes.forEach((project, index) => {
   const page = document.getElementById(project.id);
   if (!(page instanceof HTMLElement)) return;
+
+  const fileLabel = page.querySelector<HTMLElement>(
+    ".project-dialog-bar span:first-child",
+  );
+  if (fileLabel) fileLabel.textContent = `LAB FILE ${String(index + 1).padStart(2, "0")}`;
 
   const backButton = page.querySelector<HTMLButtonElement>("[data-dialog-close]");
   if (backButton) {
@@ -102,6 +123,19 @@ if (currentProject && portfolioHome && projectPages) {
 
 initialiseLanguage();
 
+function updateCvLinks() {
+  const german = getCurrentLanguage() === "de";
+  cvLinks.forEach((link) => {
+    link.href = german
+      ? "/cv/Aminci_Gana_CV_DE.pdf"
+      : "/cv/Aminci_Gana_CV_EN.pdf";
+    link.setAttribute("aria-label", german ? "Lebenslauf öffnen" : "Open CV");
+    link.title = german ? "Lebenslauf öffnen" : "Open CV";
+  });
+}
+
+updateCvLinks();
+
 function updateProjectMetadata() {
   if (!currentProject) return;
   const page = document.getElementById(currentProject.id);
@@ -123,7 +157,10 @@ function updateProjectMetadata() {
 
 updateProjectMetadata();
 document.querySelectorAll<HTMLButtonElement>("[data-language]").forEach((button) => {
-  button.addEventListener("click", updateProjectMetadata);
+  button.addEventListener("click", () => {
+    updateProjectMetadata();
+    updateCvLinks();
+  });
 });
 
 if (!currentProject) WebGL();

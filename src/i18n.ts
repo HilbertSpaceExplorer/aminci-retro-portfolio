@@ -266,9 +266,11 @@ const germanAttributes: Record<string, string> = {
   "Project navigation": "Projektnavigation",
   "Toggle navigation": "Navigation öffnen oder schließen",
   "Social links": "Links zu sozialen Netzwerken",
+  "Profile links": "Profil-Links",
   Language: "Sprache",
   "Aminci Gana on LinkedIn": "Aminci Gana auf LinkedIn",
   "Aminci Gana on GitHub": "Aminci Gana auf GitHub",
+  "Open CV": "Lebenslauf öffnen",
   "Open details for Continuum Robot Shape Prediction":
     "Details zur Formvorhersage für einen Kontinuumsroboter öffnen",
   "Open details for Vision-Based Robot Laptimer":
