@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   position: fixed;
   inset: 0;
   padding: 10vw;
@@ -136,14 +136,9 @@ body {
   text-align: left;
 }
 
-#loading .section-kicker {
-  color: var(--screen);
-}
-
 #loading-items {
   height: 64px;
   overflow: hidden;
-  color: rgba(var(--paper-rgb), 0.78);
   text-overflow: ellipsis;
 }
 
@@ -154,13 +149,13 @@ body {
   border: dashed 2px var(--paper);
   box-shadow:
     2px 2px 0 var(--ink),
-    6px 6px 0 rgba(var(--paper-rgb), 0.35);
+    6px 6px 0 rgba(var(--paper-rgb), 0.7);
 }
 
 #loading-bar-progress {
   position: absolute;
   inset: 2px;
-  background: var(--screen);
+  background: var(--paper);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s;

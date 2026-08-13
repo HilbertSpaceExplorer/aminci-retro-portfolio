@@ -672,6 +672,10 @@ export default function ScreenTextEngine(
       );
     const widthParam = parseFloat(params.get("width") ?? "");
     const width = Number.isNaN(widthParam) ? 1 : widthParam;
+    const yOffsetParam = parseFloat(params.get("y") ?? "");
+    const yOffset = Number.isNaN(yOffsetParam) ? 0 : yOffsetParam;
+    const xOffsetParam = parseFloat(params.get("x") ?? "");
+    const xOffset = Number.isNaN(xOffsetParam) ? 0 : xOffsetParam;
 
     const height = width / aspectRatio;
 
@@ -680,7 +684,11 @@ export default function ScreenTextEngine(
       new THREE.MeshBasicMaterial({ color: 0x000000 })
     );
 
-    imageFrame.position.set(1.4 / 2, -height * 0.5 - charNextLoc.y, -0.02);
+    imageFrame.position.set(
+      screenWidth / 2 + xOffset,
+      -height * 0.5 - charNextLoc.y - yOffset,
+      -0.02
+    );
     if (!params.get("noflow")) charNextLoc.y += height;
     rootGroup.add(imageFrame);
 
