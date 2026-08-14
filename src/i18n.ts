@@ -60,6 +60,20 @@ const germanText: Record<string, string> = {
   "Force Sensing": "Kraftmessung",
   "Public reference examples, not the confidential project hardware.":
     "Öffentliche Referenzbeispiele, nicht die vertrauliche Hardware des Projekts.",
+  "Public reference image, not the project setup.":
+    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts.",
+  "Public reference image, not the project setup. Reference example of a continuum robot deforming under an external tip load.":
+    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzbeispiel eines Kontinuumsroboters, der sich unter einer äußeren Last an der Spitze verformt.",
+  "Public reference image, not the project setup. Reference setup showing tendon actuation, force sensing and optical markers used to measure positions along a continuum robot's backbone.":
+    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzaufbau mit Seilzugantrieb, Kraftmessung und optischen Markern zur Erfassung von Positionen entlang der Struktur eines Kontinuumsroboters.",
+  "Public reference image, not the project setup. Reference comparison between model-predicted robot shapes and experimentally measured backbone positions.":
+    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzvergleich zwischen modellbasiert vorhergesagten Roboterformen und experimentell gemessenen Positionen entlang der Roboterstruktur.",
+  "Source:": "Quelle:",
+  "PUBLIC REFERENCE MATERIAL": "ÖFFENTLICHES REFERENZMATERIAL",
+  "Related methods from published research":
+    "Verwandte Methoden aus der Fachliteratur",
+  "These publicly available reference images illustrate related continuum-robot methods. They do not depict or reproduce the confidential experimental setup used in this project.":
+    "Diese öffentlich verfügbaren Referenzabbildungen veranschaulichen verwandte Methoden der Kontinuumsrobotik. Sie zeigen weder den vertraulichen Versuchsaufbau dieses Projekts noch bilden sie ihn nach.",
   "Reference image: Grassmann et al. (2024), Figure 7,":
     "Referenzbild: Grassmann et al. (2024), Abbildung 7,",
   "The image shows public reference examples, not the confidential project hardware.":
@@ -348,6 +362,18 @@ const germanAttributes: Record<string, string> = {
   "Open details for AI Life OS": "Details zu AI Life OS öffnen",
   "Open details for ROS 2 Mobile Robot Navigation":
     "Details zur mobilen Roboternavigation mit ROS 2 öffnen",
+  "View the external-load continuum-robot reference image at full size":
+    "Referenzabbildung des Kontinuumsroboters unter äußerer Last in voller Größe anzeigen",
+  "View the optical-tracking continuum-robot reference image at full size":
+    "Referenzabbildung zur optischen Erfassung des Kontinuumsroboters in voller Größe anzeigen",
+  "View the continuum-robot model-validation reference image at full size":
+    "Referenzabbildung zur Modellvalidierung des Kontinuumsroboters in voller Größe anzeigen",
+  "Public reference experiment showing a continuum robot deforming under an external tip load":
+    "Öffentlicher Referenzversuch mit einem Kontinuumsroboter, der sich unter einer äußeren Last an der Spitze verformt",
+  "Public reference setup showing tendon actuation, force sensing and optical markers along a continuum robot backbone":
+    "Öffentlicher Referenzaufbau mit Seilzugantrieb, Kraftmessung und optischen Markern entlang der Struktur eines Kontinuumsroboters",
+  "Public reference comparison of model-predicted continuum robot shapes and measured backbone positions":
+    "Öffentlicher Referenzvergleich zwischen modellbasiert vorhergesagten Formen eines Kontinuumsroboters und gemessenen Positionen entlang der Roboterstruktur",
   "View the continuum-robot reference image at full size":
     "Referenzbild der Kontinuumsroboter in voller Größe anzeigen",
   "Public reference image showing planar tendon-driven, spatial tendon-driven, and concentric-tube continuum robot prototypes":

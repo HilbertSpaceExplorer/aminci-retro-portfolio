@@ -414,6 +414,14 @@ section:last-of-type {
   line-height: 1.45;
 }
 
+.project-media-credit > span {
+  display: block;
+}
+
+.project-media-credit > span + span {
+  margin-top: 5px;
+}
+
 .project-media-credit a {
   position: relative;
   color: var(--accent);
@@ -843,6 +851,32 @@ body.dialog-open {
   flex: 1;
   min-height: 300px;
   object-fit: contain;
+}
+
+.project-diagram--credited {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-reference-gallery {
+  margin-top: 24px;
+}
+
+.project-reference-gallery-intro {
+  padding: 22px;
+  border: 2px solid var(--ink);
+  background: rgba(var(--panel-rgb), 0.94);
+}
+
+.project-reference-gallery-intro h3 {
+  margin: 5px 0 12px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+.project-reference-note {
+  max-width: 82ch;
+  margin: 0;
+  line-height: 1.65;
 }
 
 .project-dialog-summary {
