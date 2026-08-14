@@ -32,12 +32,14 @@ const germanText: Record<string, string> = {
     "Vorhersage der Form eines Kontinuumsroboters unter äußeren Kräften.",
   "PROJECT ARCHIVE / 2025-2026": "PROJEKTARCHIV / 2025-2026",
   "PROJECT ARCHIVE / 2025–2026": "PROJEKTARCHIV / 2025–2026",
+  "PROJECT ARCHIVE / 2024-2026": "PROJEKTARCHIV / 2024-2026",
   "Selected engineering work": "Ausgewählte technische Projekte",
   "LAB FILE 01": "PROJEKTAKTE 01",
   "LAB FILE 02": "PROJEKTAKTE 02",
   "LAB FILE 03": "PROJEKTAKTE 03",
   "LAB FILE 04": "PROJEKTAKTE 04",
   "LAB FILE 05": "PROJEKTAKTE 05",
+  "LAB FILE 06": "PROJEKTAKTE 06",
   "IN PROGRESS · PUBLIC SUMMARY": "IN ARBEIT · ÖFFENTLICHE ÜBERSICHT",
   "IN PROGRESS ú PUBLIC SUMMARY": "IN ARBEIT · ÖFFENTLICHE ÜBERSICHT",
   "VISION SYSTEM · 2025": "BILDVERARBEITUNG · 2025",
@@ -240,6 +242,70 @@ const germanText: Record<string, string> = {
   "Product scoping": "Festlegung des Produktumfangs",
   "User-centred design": "Nutzerzentrierte Gestaltung",
   "Privacy and security thinking": "Datenschutz- und Sicherheitskonzeption",
+  "UNIVERSITY PROJECT / 2024": "UNIVERSITÄTSPROJEKT / 2024",
+  "ROS 2 Mobile Robot Navigation": "Mobile Roboternavigation mit ROS 2",
+  "ROS 2 / GAZEBO / AUTONOMOUS NAVIGATION": "ROS 2 / GAZEBO / AUTONOME NAVIGATION",
+  "A university project in which I programmed a simulated mobile robot to execute precise motions, interpret laser scans, avoid collisions, and navigate previously unseen corridors and mazes.":
+    "Ein Universitätsprojekt, in dem ich einen simulierten mobilen Roboter für präzise Bewegungen, die Auswertung von Laserscans, Kollisionsvermeidung und die Navigation durch unbekannte Gänge und Labyrinthe programmiert habe.",
+  "A sequence of university programming tasks focused on motion control, laser-based collision avoidance, and autonomous navigation of a simulated mobile robot in unknown environments.":
+    "Eine Reihe universitärer Programmieraufgaben zu Bewegungssteuerung, laserbasierter Kollisionsvermeidung und autonomer Navigation eines simulierten mobilen Roboters in unbekannten Umgebungen.",
+  "Course simulation environment used for the programming tasks.":
+    "Kurs-Simulationsumgebung, die für die Programmieraufgaben verwendet wurde.",
+  "Gazebo maze from the supplied university project material.":
+    "Gazebo-Labyrinth aus den bereitgestellten Unterlagen des Universitätsprojekts.",
+  "Gazebo maze from university project.":
+    "Gazebo-Labyrinth aus dem Universitätsprojekt.",
+  "Gazebo maze from the supplied university project material. The image shows the task environment rather than a recorded run of my final submission.":
+    "Gazebo-Labyrinth aus den bereitgestellten Unterlagen des Universitätsprojekts. Das Bild zeigt die Aufgabenoberfläche und keine aufgezeichnete Ausführung meiner finalen Abgabe.",
+  "Course simulation environment used for the programming tasks. The image illustrates the provided environment rather than a recorded run of my final submission.":
+    "Kurs-Simulationsumgebung, die für die Programmieraufgaben verwendet wurde. Das Bild zeigt die bereitgestellte Umgebung und keine aufgezeichnete Ausführung meiner finalen Abgabe.",
+  "PROJECT PROGRESSION": "PROJEKTVERLAUF",
+  "From motion primitives to autonomous navigation": "Von Bewegungsgrundlagen zur autonomen Navigation",
+  "The project was organised as four milestones. I first planned a maze-solving procedure, then programmed accurate motion sequences, developed collision-free corridor behaviour using laser measurements, and finally combined these ideas into an autonomous maze-navigation algorithm.":
+    "Das Projekt war in vier Meilensteine gegliedert. Zunächst plante ich ein Verfahren zur Labyrinthnavigation. Danach programmierte ich präzise Bewegungsabläufe, entwickelte mit Lasermessungen ein kollisionsfreies Verhalten in Gängen und verband diese Ansätze abschließend zu einem Algorithmus für autonome Labyrinthnavigation.",
+  "01 / Path planning": "01 / Wegplanung",
+  "I designed a process for navigating an unknown grid maze, recording travelled distance, and comparing alternative traversal strategies.":
+    "Ich entwarf einen Ablauf zur Navigation durch ein unbekanntes Rasterlabyrinth, zur Erfassung der gefahrenen Strecke und zum Vergleich verschiedener Navigationsstrategien.",
+  "02 / Motion control": "02 / Bewegungssteuerung",
+  "Python routines commanded one-metre square trajectories at changing speeds while monitoring positional error and ensuring each motion completed before the next began.":
+    "Python-Routinen steuerten quadratische Trajektorien mit einem Meter Kantenlänge und wechselnden Geschwindigkeiten. Dabei wurden Positionsfehler erfasst und jede Bewegung vor Beginn der nächsten vollständig beendet.",
+  "03 / Reactive navigation": "03 / Reaktive Navigation",
+  "The robot interpreted 360-degree laser data to align with walls, follow corridors, recognise dead ends, turn safely, and avoid collisions in layouts that were not hard-coded.":
+    "Der Roboter wertete 360-Grad-Laserdaten aus, um sich an Wänden auszurichten, Gängen zu folgen, Sackgassen zu erkennen, sicher zu wenden und Kollisionen in nicht fest einprogrammierten Umgebungen zu vermeiden.",
+  "04 / Maze autonomy": "04 / Autonome Labyrinthnavigation",
+  "The final task required the robot to find a target in an unknown maze, stop automatically, and report a step-by-step route that could be followed back to the start.":
+    "In der Abschlussaufgabe musste der Roboter in einem unbekannten Labyrinth ein Ziel finden, selbstständig anhalten und eine schrittweise Wegbeschreibung für den Rückweg zum Start ausgeben.",
+  "Provided Gazebo environment illustrating the wall-alignment and corridor-navigation tasks.":
+    "Bereitgestellte Gazebo-Umgebung zur Veranschaulichung der Aufgaben zur Wandausrichtung und Gangnavigation.",
+  "Example of the mobile robot platform represented by the course simulation.":
+    "Beispiel der mobilen Roboterplattform, die in der Kurssimulation abgebildet wird.",
+  "Mobile robot platform represented by the simulation.":
+    "Mobile Roboterplattform, die in der Simulation abgebildet wird.",
+  "Course diagram showing the laser directions used to reason about nearby walls and obstacles.":
+    "Kursdiagramm der Laserrichtungen, die zur Erfassung benachbarter Wände und Hindernisse verwendet wurden.",
+  "Diagram showing the laser directions used to reason about nearby walls and obstacles.":
+    "Diagramm der Laserrichtungen, die zur Erfassung benachbarter Wände und Hindernisse verwendet wurden.",
+  "Supplied Gazebo corridor illustrating wall alignment and collision-free navigation.":
+    "Bereitgestellter Gazebo-Gang zur Veranschaulichung von Wandausrichtung und kollisionsfreier Navigation.",
+  "Gazebo corridor illustrating wall alignment and collision-free navigation.":
+    "Gazebo-Gang zur Veranschaulichung von Wandausrichtung und kollisionsfreier Navigation.",
+  "Gazebo development view used to inspect the robot and simulation world while testing behaviour.":
+    "Gazebo-Entwicklungsansicht zur Kontrolle von Roboter und Simulationsumgebung beim Testen des Verhaltens.",
+  "Physical modular maze shown in the course material, illustrating the type of navigation problem modelled in simulation.":
+    "Physisches modulares Labyrinth aus den Kursunterlagen. Es veranschaulicht die Art der Navigationsaufgabe, die in der Simulation modelliert wurde.",
+  "ROS communication": "ROS-Kommunikation",
+  "The controller subscribed to /scan messages of type sensor_msgs/msg/LaserScan and published velocity commands to /cmd_vel using geometry_msgs/msg/Twist.":
+    "Die Steuerung abonnierte /scan-Nachrichten des Typs sensor_msgs/msg/LaserScan und veröffentlichte Geschwindigkeitsbefehle mit geometry_msgs/msg/Twist auf /cmd_vel.",
+  "Testing approach": "Testansatz",
+  "The algorithms were tested in Gazebo across several supplied corridors and mazes. The assessment used an additional unseen layout, so the navigation logic needed to generalise beyond a single map.":
+    "Die Algorithmen wurden in Gazebo mit mehreren bereitgestellten Gängen und Labyrinthen getestet. Für die Bewertung wurde eine weitere unbekannte Umgebung verwendet, sodass die Navigationslogik über eine einzelne Karte hinaus funktionieren musste.",
+  "ROS 2 nodes and topics": "ROS-2-Knoten und Topics",
+  "Gazebo simulation": "Gazebo-Simulation",
+  "Python robotics programming": "Robotikprogrammierung mit Python",
+  "Laser-scan processing": "Verarbeitung von Laserscans",
+  "Reactive control logic": "Reaktive Steuerungslogik",
+  "Autonomous navigation": "Autonome Navigation",
+  "Debugging and validation": "Fehlersuche und Validierung",
   CONTACT: "KONTAKT",
   "Contact me": "Kontakt aufnehmen",
   "Email is the best way to contact me.": "Am besten erreichst du mich per E-Mail.",
@@ -280,6 +346,8 @@ const germanAttributes: Record<string, string> = {
   "Open details for Compressed-Air System ML":
     "Details zum Machine-Learning-Projekt für das Druckluftsystem öffnen",
   "Open details for AI Life OS": "Details zu AI Life OS öffnen",
+  "Open details for ROS 2 Mobile Robot Navigation":
+    "Details zur mobilen Roboternavigation mit ROS 2 öffnen",
   "View the continuum-robot reference image at full size":
     "Referenzbild der Kontinuumsroboter in voller Größe anzeigen",
   "Public reference image showing planar tendon-driven, spatial tendon-driven, and concentric-tube continuum robot prototypes":
@@ -302,6 +370,36 @@ const germanAttributes: Record<string, string> = {
     "Tatsächliche Heute-Ansicht von Life OS mit Demodaten",
   "Actual Life OS interactive Tutor screen with demo data":
     "Tatsächliche interaktive Tutor-Ansicht von Life OS mit Demodaten",
+  "View the Gazebo maze environment at full size":
+    "Gazebo-Labyrinthumgebung in voller Größe anzeigen",
+  "Gazebo mobile robot simulation environment with walls and a target opening":
+    "Gazebo-Simulationsumgebung mit mobilem Roboter, Wänden und Zielöffnung",
+  "View the Gazebo wall-following environment at full size":
+    "Gazebo-Umgebung zur Wandverfolgung in voller Größe anzeigen",
+  "Gazebo mobile robot positioned beside a wall for laser-based alignment and following":
+    "Mobiler Roboter in Gazebo neben einer Wand zur laserbasierten Ausrichtung und Wandverfolgung",
+  "View the mobile robot platform at full size":
+    "Mobile Roboterplattform in voller Größe anzeigen",
+  "Mobile robot platform with wheels, laser scanner, and depth camera":
+    "Mobile Roboterplattform mit Rädern, Laserscanner und Tiefenkamera",
+  "View the robot laser-scan layout at full size":
+    "Anordnung der Roboter-Laserscans in voller Größe anzeigen",
+  "Top view diagrams showing the mobile robot laser measurement directions":
+    "Draufsichten mit den Lasermessrichtungen des mobilen Roboters",
+  "View the Gazebo corridor environment at full size":
+    "Gazebo-Gangumgebung in voller Größe anzeigen",
+  "Gazebo mobile robot navigating between two corridor walls":
+    "Mobiler Roboter in Gazebo bei der Navigation zwischen zwei Gangwänden",
+  "View the Gazebo development interface at full size":
+    "Gazebo-Entwicklungsoberfläche in voller Größe anzeigen",
+  "Gazebo interface showing a simulated mobile robot in an obstacle course":
+    "Gazebo-Oberfläche mit einem simulierten mobilen Roboter in einer Hindernisumgebung",
+  "View the physical maze testbed at full size":
+    "Physischen Labyrinthversuchsstand in voller Größe anzeigen",
+  "Overhead view of a physical modular maze with a mobile robot":
+    "Draufsicht eines physischen modularen Labyrinths mit mobilem Roboter",
+  "Overhead Gazebo view of the mobile robot in a large maze":
+    "Gazebo-Draufsicht des mobilen Roboters in einem großen Labyrinth",
   "Illustrative marker-distance signal with detected local minima":
     "Beispielhaftes Marker-Abstandssignal mit erkannten lokalen Minima",
   "Measured flow traces for four compressed-air operating states":
@@ -471,7 +569,35 @@ function updateLanguageControls(language: PortfolioLanguage) {
   });
 }
 
+function updateLanguageUrl(language: PortfolioLanguage) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", language);
+  window.history.replaceState(
+    window.history.state,
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
+function updateInternalLanguageLinks(language: PortfolioLanguage) {
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="/"]').forEach((link) => {
+    const url = new URL(link.href, window.location.origin);
+    const isPortfolioPage =
+      url.origin === window.location.origin &&
+      (url.pathname === "/" || url.pathname.startsWith("/projects/"));
+
+    if (!isPortfolioPage) return;
+    url.searchParams.set("lang", language);
+    link.href = `${url.pathname}${url.search}${url.hash}`;
+  });
+}
+
 export function getInitialLanguage(): PortfolioLanguage {
+  const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+  if (requestedLanguage === "de" || requestedLanguage === "en") {
+    return requestedLanguage;
+  }
+
   try {
     const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (stored === "de" || stored === "en") return stored;
@@ -493,6 +619,8 @@ export function applyPortfolioLanguage(language: PortfolioLanguage) {
   translateAttributes(language);
   translateMetadata(language);
   updateLanguageControls(language);
+  updateLanguageUrl(language);
+  updateInternalLanguageLinks(language);
 }
 
 export function initialiseLanguage() {

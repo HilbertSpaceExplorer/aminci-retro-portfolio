@@ -187,7 +187,7 @@
       </section>
 
       <section id="projects">
-        <p class="section-kicker">PROJECT ARCHIVE / 2025–2026</p>
+        <p class="section-kicker">PROJECT ARCHIVE / 2024-2026</p>
         <h1>Selected engineering work</h1>
 
         <article class="project project--clickable">
@@ -445,6 +445,60 @@
             href="/projects/ai-life-os"
             data-project-dialog="project-ai-life-os"
             aria-label="Open details for AI Life OS"
+          ></a>
+        </article>
+
+        <article class="project project--clickable">
+          <header class="project-filebar">
+            <span>LAB FILE 06</span>
+            <span>UNIVERSITY PROJECT / 2024</span>
+          </header>
+          <div class="project-layout">
+            <figure class="project-media project-media--contain project-media--credited">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the Gazebo maze environment at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/gazebo-maze-overview.png"
+                  alt="Overhead Gazebo view of the mobile robot in a large maze"
+                  loading="lazy"
+                />
+                <span>VIEW FULL SIZE</span>
+              </button>
+              <figcaption class="project-media-credit">
+                Gazebo maze from university project.
+              </figcaption>
+            </figure>
+            <div class="project-copy">
+              <div class="project-heading">
+                <h2>ROS 2 Mobile Robot Navigation</h2>
+                <h3>ROS 2 / GAZEBO / AUTONOMOUS NAVIGATION</h3>
+              </div>
+              <p>
+                A university project in which I programmed a simulated mobile
+                robot to execute precise motions, interpret laser scans, avoid
+                collisions, and navigate previously unseen corridors and mazes.
+              </p>
+              <ul class="skills">
+                <li>ROS 2</li>
+                <li>Gazebo</li>
+                <li>Python</li>
+                <li>LaserScan</li>
+                <li>Mobile Robotics</li>
+              </ul>
+              <div class="project-open-hint" aria-hidden="true">
+                OPEN FILE <span>&#8594;</span>
+              </div>
+            </div>
+          </div>
+          <a
+            class="project-card-trigger"
+            href="/projects/ros2-maze-navigation"
+            data-project-dialog="project-ros2-maze-navigation"
+            aria-label="Open details for ROS 2 Mobile Robot Navigation"
           ></a>
         </article>
       </section>
@@ -1259,6 +1313,223 @@
               <li>Product scoping</li>
               <li>User-centred design</li>
               <li>Privacy and security thinking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="project-dialog project-page"
+      id="project-ros2-maze-navigation"
+      aria-labelledby="project-ros2-maze-navigation-title"
+      data-project-path="ros2-maze-navigation"
+      hidden
+    >
+      <div class="project-dialog-shell">
+        <header class="project-dialog-bar">
+          <div>
+            <span>LAB FILE 06</span>
+            <span>UNIVERSITY PROJECT / 2024</span>
+          </div>
+          <button type="button" data-dialog-close aria-label="Close project details">
+            CLOSE
+          </button>
+        </header>
+        <div class="project-dialog-body">
+          <div class="project-dialog-hero">
+            <figure class="project-dialog-media project-dialog-media--contain project-dialog-media--credited">
+              <button
+                class="project-image-expand"
+                type="button"
+                data-image-expand
+                aria-label="View the Gazebo maze environment at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/gazebo-maze-overview.png"
+                  alt="Overhead Gazebo view of the mobile robot in a large maze"
+                />
+                <span>VIEW FULL SIZE</span>
+              </button>
+              <figcaption class="project-media-credit">
+                Gazebo maze from university project.
+              </figcaption>
+            </figure>
+            <div class="project-dialog-summary">
+              <p class="project-dialog-kicker">ROS 2 / GAZEBO / AUTONOMOUS NAVIGATION</p>
+              <h2 id="project-ros2-maze-navigation-title">
+                ROS 2 Mobile Robot Navigation
+              </h2>
+              <p>
+                A sequence of university programming tasks focused on motion
+                control, laser-based collision avoidance, and autonomous
+                navigation of a simulated mobile robot in unknown environments.
+              </p>
+              <ul class="skills">
+                <li>ROS 2</li>
+                <li>Gazebo</li>
+                <li>Python</li>
+                <li>LaserScan</li>
+                <li>Twist Commands</li>
+              </ul>
+            </div>
+          </div>
+
+          <section class="project-analysis-section">
+            <p class="project-dialog-kicker">PROJECT PROGRESSION</p>
+            <h3>From motion primitives to autonomous navigation</h3>
+            <p>
+              The project was organised as four milestones. I first planned a
+              maze-solving procedure, then programmed accurate motion
+              sequences, developed collision-free corridor behaviour using
+              laser measurements, and finally combined these ideas into an
+              autonomous maze-navigation algorithm.
+            </p>
+          </section>
+
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>01 / Path planning</h3>
+              <p>
+                I designed a process for navigating an unknown grid maze,
+                recording travelled distance, and comparing alternative
+                traversal strategies.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>02 / Motion control</h3>
+              <p>
+                Python routines commanded one-metre square trajectories at
+                changing speeds while monitoring positional error and ensuring
+                each motion completed before the next began.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>03 / Reactive navigation</h3>
+              <p>
+                The robot interpreted 360-degree laser data to align with
+                walls, follow corridors, recognise dead ends, turn safely, and
+                avoid collisions in layouts that were not hard-coded.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>04 / Maze autonomy</h3>
+              <p>
+                The final task required the robot to find a target in an
+                unknown maze, stop automatically, and report a step-by-step
+                route that could be followed back to the start.
+              </p>
+            </article>
+          </div>
+
+          <div class="project-media-grid">
+            <figure class="project-diagram">
+              <a
+                class="project-diagram-link"
+                href="/images/projects/ros2-maze-navigation/gazebo-corridor-navigation.png"
+                data-image-expand
+                aria-label="View the Gazebo corridor environment at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/gazebo-corridor-navigation.png"
+                  alt="Gazebo mobile robot navigating between two corridor walls"
+                  loading="lazy"
+                />
+                <span>OPEN FULL-SIZE CORRIDOR VIEW</span>
+              </a>
+              <figcaption class="project-media-credit">
+                Gazebo corridor illustrating wall alignment and collision-free navigation.
+              </figcaption>
+            </figure>
+            <figure class="project-diagram">
+              <a
+                class="project-diagram-link"
+                href="/images/projects/ros2-maze-navigation/gazebo-interface.png"
+                data-image-expand
+                aria-label="View the Gazebo development interface at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/gazebo-interface.png"
+                  alt="Gazebo interface showing a simulated mobile robot in an obstacle course"
+                  loading="lazy"
+                />
+                <span>OPEN FULL-SIZE GAZEBO VIEW</span>
+              </a>
+              <figcaption class="project-media-credit">
+                Gazebo development view used to inspect the robot and simulation world while testing behaviour.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="project-media-grid">
+            <figure class="project-diagram">
+              <a
+                class="project-diagram-link"
+                href="/images/projects/ros2-maze-navigation/mobile-robot-platform.png"
+                data-image-expand
+                aria-label="View the mobile robot platform at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/mobile-robot-platform.png"
+                  alt="Mobile robot platform with wheels, laser scanner, and depth camera"
+                  loading="lazy"
+                />
+                <span>OPEN FULL-SIZE PLATFORM VIEW</span>
+              </a>
+              <figcaption class="project-media-credit">
+                Mobile robot platform represented by the simulation.
+              </figcaption>
+            </figure>
+            <figure class="project-diagram">
+              <a
+                class="project-diagram-link"
+                href="/images/projects/ros2-maze-navigation/laser-scan-layout.png"
+                data-image-expand
+                aria-label="View the robot laser-scan layout at full size"
+              >
+                <img
+                  src="/images/projects/ros2-maze-navigation/laser-scan-layout.png"
+                  alt="Top view diagrams showing the mobile robot laser measurement directions"
+                  loading="lazy"
+                />
+                <span>OPEN FULL-SIZE SENSOR VIEW</span>
+              </a>
+              <figcaption class="project-media-credit">
+                Diagram showing the laser directions used to reason about nearby walls and obstacles.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="project-detail-grid">
+            <article class="project-detail-card">
+              <h3>ROS communication</h3>
+              <p>
+                The controller subscribed to /scan messages of type
+                sensor_msgs/msg/LaserScan and published velocity commands to
+                /cmd_vel using geometry_msgs/msg/Twist.
+              </p>
+            </article>
+            <article class="project-detail-card">
+              <h3>Testing approach</h3>
+              <p>
+                The algorithms were tested in Gazebo across several supplied
+                corridors and mazes. The assessment used an additional unseen
+                layout, so the navigation logic needed to generalise beyond a
+                single map.
+              </p>
+            </article>
+          </div>
+
+          <div class="project-demonstrates">
+            <h3>Methods and skills</h3>
+            <ul>
+              <li>ROS 2 nodes and topics</li>
+              <li>Gazebo simulation</li>
+              <li>Python robotics programming</li>
+              <li>Laser-scan processing</li>
+              <li>Reactive control logic</li>
+              <li>Autonomous navigation</li>
+              <li>Debugging and validation</li>
             </ul>
           </div>
         </div>

@@ -820,6 +820,31 @@ body.dialog-open {
   object-fit: contain;
 }
 
+.project-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.project-media-grid .project-diagram {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.project-media-grid .project-diagram-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-media-grid .project-diagram-link img {
+  flex: 1;
+  min-height: 300px;
+  object-fit: contain;
+}
+
 .project-dialog-summary {
   display: flex;
   min-width: 0;
@@ -1125,8 +1150,13 @@ footer {
   }
 
   .project-dialog-hero,
-  .project-detail-grid {
+  .project-detail-grid,
+  .project-media-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-media-grid .project-diagram-link img {
+    min-height: 0;
   }
 
   .project-dialog-media {

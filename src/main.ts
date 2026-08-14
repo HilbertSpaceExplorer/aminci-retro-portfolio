@@ -37,6 +37,11 @@ const projectRoutes = [
     id: "project-pid-evaluation",
     title: "PID Response Evaluation",
   },
+  {
+    slug: "ros2-maze-navigation",
+    id: "project-ros2-maze-navigation",
+    title: "ROS 2 Mobile Robot Navigation",
+  },
 ] as const;
 
 const projectsSection = document.getElementById("projects");
@@ -73,7 +78,7 @@ projectRoutes.forEach((project, index) => {
     backButton.textContent = "BACK TO ARCHIVE ←";
     backButton.setAttribute("aria-label", "Back to project archive");
     backButton.addEventListener("click", () => {
-      window.location.href = "/#projects";
+      window.location.href = `/?lang=${getCurrentLanguage()}#projects`;
     });
   }
 
