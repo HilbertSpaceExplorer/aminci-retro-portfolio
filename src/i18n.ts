@@ -60,20 +60,16 @@ const germanText: Record<string, string> = {
   "Force Sensing": "Kraftmessung",
   "Public reference examples, not the confidential project hardware.":
     "Öffentliche Referenzbeispiele, nicht die vertrauliche Hardware des Projekts.",
-  "Public reference image, not the project setup.":
-    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts.",
-  "Public reference image, not the project setup. Reference example of a continuum robot deforming under an external tip load.":
-    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzbeispiel eines Kontinuumsroboters, der sich unter einer äußeren Last an der Spitze verformt.",
-  "Public reference image, not the project setup. Reference setup showing tendon actuation, force sensing and optical markers used to measure positions along a continuum robot's backbone.":
-    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzaufbau mit Seilzugantrieb, Kraftmessung und optischen Markern zur Erfassung von Positionen entlang der Struktur eines Kontinuumsroboters.",
-  "Public reference image, not the project setup. Reference comparison between model-predicted robot shapes and experimentally measured backbone positions.":
-    "Öffentliche Referenzabbildung, nicht der Versuchsaufbau dieses Projekts. Referenzvergleich zwischen modellbasiert vorhergesagten Roboterformen und experimentell gemessenen Positionen entlang der Roboterstruktur.",
+  "Reference example of a continuum robot deforming under an external tip load.":
+    "Referenzbeispiel eines Kontinuumsroboters, der sich unter einer äußeren Last an der Spitze verformt.",
+  "Reference setup showing tendon actuation, force sensing and optical markers used to measure positions along a continuum robot's backbone.":
+    "Referenzaufbau mit Seilzugantrieb, Kraftmessung und optischen Markern zur Erfassung von Positionen entlang der Struktur eines Kontinuumsroboters.",
+  "Reference comparison between model-predicted robot shapes and experimentally measured backbone positions.":
+    "Referenzvergleich zwischen modellbasiert vorhergesagten Roboterformen und experimentell gemessenen Positionen entlang der Roboterstruktur.",
   "Source:": "Quelle:",
   "PUBLIC REFERENCE MATERIAL": "ÖFFENTLICHES REFERENZMATERIAL",
   "Related methods from published research":
     "Verwandte Methoden aus der Fachliteratur",
-  "These publicly available reference images illustrate related continuum-robot methods. They do not depict or reproduce the confidential experimental setup used in this project.":
-    "Diese öffentlich verfügbaren Referenzabbildungen veranschaulichen verwandte Methoden der Kontinuumsrobotik. Sie zeigen weder den vertraulichen Versuchsaufbau dieses Projekts noch bilden sie ihn nach.",
   "Reference image: Grassmann et al. (2024), Figure 7,":
     "Referenzbild: Grassmann et al. (2024), Abbildung 7,",
   "The image shows public reference examples, not the confidential project hardware.":
@@ -82,8 +78,8 @@ const germanText: Record<string, string> = {
     ". Das Bild zeigt öffentlich dokumentierte Referenzbeispiele und nicht die vertrauliche Hardware dieses Projekts.",
   "A public overview of an experimental workflow for predicting continuum robot shape under external forces using physical sensing, stereo vision, and model-based validation.":
     "Eine öffentliche Übersicht über einen experimentellen Ablauf zur Vorhersage der Form eines Kontinuumsroboters unter äußeren Kräften. Dafür werden physische Messungen, Stereovision und modellbasierte Validierung kombiniert.",
-  "CONFIDENTIALITY NOTE: Specific geometry, datasets, institute equipment, and results are intentionally omitted.":
-    "HINWEIS ZUR VERTRAULICHKEIT: Konkrete Geometrien, Datensätze, Institutsaufbauten und Ergebnisse werden bewusst nicht veröffentlicht.",
+  "CONFIDENTIALITY NOTE: Specific geometry, datasets, institute equipment, and results are intentionally omitted. The public reference images illustrate related methods and do not depict or reproduce the experimental setup used in this project.":
+    "HINWEIS ZUR VERTRAULICHKEIT: Konkrete Geometrien, Datensätze, Institutsaufbauten und Ergebnisse werden bewusst nicht veröffentlicht. Die öffentlichen Referenzabbildungen veranschaulichen verwandte Methoden und zeigen weder den in diesem Projekt verwendeten Versuchsaufbau noch bilden sie ihn nach.",
   "01 / Problem": "01 / Problem",
   "External contact forces deform continuum robots, making shape prediction from actuation information alone difficult.":
     "Äußere Kontaktkräfte verformen Kontinuumsroboter. Dadurch lässt sich ihre Form allein aus den Antriebsgrößen nur schwer zuverlässig vorhersagen.",
