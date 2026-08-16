@@ -1,9 +1,14 @@
 import "./main.css";
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 import {
   getCurrentLanguage,
   initialiseLanguage,
 } from "./i18n";
 import WebGL from "./webgl";
+
+inject();
+injectSpeedInsights();
 
 const root = document.documentElement;
 const portfolioHome = document.getElementById("portfolio-home");
